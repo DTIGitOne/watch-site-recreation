@@ -1,0 +1,115 @@
+:root {
+    --primary-body-color: #FCFCFC;
+    --primary-homeImageBox-color: #FFB568;
+    --primary-textColorLinks-color: #8C8C8C;
+    --primary-titleColor-color: #2E2E2E;
+    --primary-textColor-color: #595959;
+    --primary-button1-color: #BFBFBF;
+    --primary-button2-color: #2B2B2B;
+}
+
+/* id's */
+
+#homeImageBox {
+    height: 53vh;
+    width: 70%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: var(--primary-homeImageBox-color);
+}
+
+#imageBox {
+    width: 94%;
+    height: 77%;
+    object-fit: cover;
+    overflow: hidden;
+    margin-bottom: 1.1rem;
+}
+
+#imageBox img {
+    width: 100%;
+    height: 100%;
+}
+
+#SocialBox {
+    margin-top: 6rem;
+    width: 30%;
+    rotate: 270deg;
+    display: flex;
+    font-size: 0.75rem;
+    color: var(--primary-textColorLinks-color);
+    gap: 1rem;
+    padding-bottom: 2.3rem;
+}
+
+#TopDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+#titleTop {
+    font-size: 2rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--primary-titleColor-color);
+}
+
+#descriptionText {
+    margin-top: 0.9rem;
+    font-size: 0.938rem;
+    color: var(--primary-textColor-color);
+}
+
+#priceBox {
+    margin-top: 1.3rem;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--primary-homeImageBox-color);
+}
+
+#featuredBox {
+    margin-top: 6rem;
+}
+
+/* classe's */
+
+.text1 {
+    font-size: 1.1rem;
+    color: var(--primary-titleColor-color);
+    font-weight: 500;
+    letter-spacing: 0.9px;
+}
+
+.text2 {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: var(--primary-titleColor-color);
+    font-weight: 600;
+    letter-spacing: 0.9px;
+}
+
+.b1 {
+    font-size: 0.938rem;
+    font-weight: 600;
+    padding: 0.85rem 1.5rem;
+    color: var(--primary-textColor-color);
+    background-color: var(--primary-button1-color);
+}
+
+.b2 {
+    font-size: 0.938rem;
+    padding: 1.2rem 2rem;
+    color: #ffffff;
+    background-color: var(--primary-button2-color);
+    box-shadow: 10px 6px 10px 1px rgb(223, 218, 218);
+}
+
+.divLine {
+    width: 4rem;
+    height: 2px;
+    background-color: var(--primary-homeImageBox-color);
+}
