@@ -1,7 +1,12 @@
+import Carousel from '../Components/Carousel';
 import NavBar from '../Components/NavBar';
+import ReviewCard from '../Components/ReviewCard';
+import Fade from '../Components/SlickCarousel';
 import WatchCard from '../Components/WatchCard';
 import '../css/home.css'
-import { featuredWatches, newCollection } from '../Data/data';
+import { featuredWatches, newCollection, products } from '../Data/data';
+import outStory from "../Data/Images/story 1.png"
+import story2 from "../Data/Images/story 2.png";
 
 const MainPage = () => {
     return (
@@ -44,9 +49,78 @@ const MainPage = () => {
                 <div className=' flex flex-col justify-center items-center gap-10 mt-10'>
                     {featuredWatches.map((list) => {
                         return (
-                            <WatchCard name={list.name} image={list.Image} price={list.price} />
+                            <div id='featuredCard'>
+                                 <WatchCard name={list.name} image={list.Image} price={list.price} product={false} />
+                            </div>
                         );
                     })}
+                </div>
+            </div>
+            <div id='ourStoryBox'>
+                <div className=' flex flex-col w-full justify-center items-center gap-3'>
+                   <div className='divLine'></div>
+                   <h3 className='text1'>OUR STORY</h3>
+                </div>
+                <div className='outStoryInner'>
+                    <h2 className='heading1'>
+                        Inspirational Watch of 
+                        this year
+                    </h2>
+                    <p className='description1'>
+                        The latest and modern watches of this year, is available in various presentations in this store, discover them now.
+                    </p>
+                    <div>
+                        <button className='b3'>
+                            Discover
+                        </button>
+                    </div>
+                </div>
+                <div id='ourStoryOuterBox'>
+                    <div id='ourStoryImageBox1'>
+                        <div id='outStoryInnerBox1'>
+                            <img src={outStory} alt="" />
+                        </div>
+                        <div id='outStoryInnerBox2'></div>
+                    </div>
+                </div>
+            </div>
+            <div id='productsBox'>
+                <div className=' flex flex-col w-full justify-center items-center gap-3'>
+                   <div className='divLine'></div>
+                   <h3 className='text1'>PRODUCTS</h3>
+                </div>
+                <div className=' w-full justify-center flex'>
+                <div id='productsListBox'>
+                    {products.map((product) => {
+                        return (
+                            <div id='cardProduct'>
+                                <WatchCard name={product.name} image={product.Image} price={product.price} product={true} />
+                            </div>
+                        );
+                    })}
+                </div>
+                </div>
+                <div id='commentBox'>
+                    <div id='commentInner'>
+                        <Carousel />
+                    </div>
+                </div>
+                <div id='ProductsImageOuterBox'>
+                    <div id='ProductsImageImageBox1'>
+                        <div id='ProductsImageInnerBox1'>
+                            <img src={story2} alt="" />
+                        </div>
+                        <div id='ProductsImageInnerBox2'></div>
+                    </div>
+                </div>
+            </div>
+            <div id='newArrivalsBox'>
+                <div className=' flex flex-col w-full justify-center items-center gap-3'>
+                   <div className='divLine'></div>
+                   <h3 className='text1'>NEW ARRIVALS</h3>
+                </div>
+                <div id='newCard'>
+                    <Fade />
                 </div>
             </div>
         </div>

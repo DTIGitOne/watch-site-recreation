@@ -75,7 +75,156 @@
     margin-top: 6rem;
 }
 
+#ourStoryBox {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+#ourStoryOuterBox {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ourStoryImageBox1 {
+    width: 88%;
+    height: 37vh;
+    position: relative;
+}
+
+#outStoryInnerBox1 {
+    height: 84%;
+    width: 84%;
+    object-fit: cover;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+#outStoryInnerBox1 img {
+    height: 100%;
+    width: 100%;
+}
+
+#outStoryInnerBox2 {
+    height: 84%;
+    width: 84%;
+    background-color: var(--primary-homeImageBox-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#productsBox {
+    margin-top: 6rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#productsListBox {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    gap: 1.6rem;
+    padding: 0.4rem;
+}
+
+#featuredCard {
+    height: 46vh;
+    width: 85vw;
+}
+
+#cardProduct {
+    width: 45%;
+    height: 25vh;
+}
+
+#commentBox {
+    margin-top: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#commentInner {
+    width: 85%;
+}
+
+#ProductsImageOuterBox {
+    margin-top: 3rem;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ProductsImageImageBox1 {
+    width: 88%;
+    height: 37vh;
+    position: relative;
+}
+
+#ProductsImageInnerBox1 {
+    height: 84%;
+    width: 84%;
+    object-fit: cover;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+#ProductsImageInnerBox1 img {
+    height: 100%;
+    width: 100%;
+}
+
+#ProductsImageInnerBox2 {
+    height: 84%;
+    width: 84%;
+    background-color: var(--primary-homeImageBox-color);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#newArrivalsBox {
+    margin-top: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.7rem;
+}
+
+#newCard {
+    height: 46vh;
+    width: 85vw;
+    margin-bottom: 4rem;
+}
+
 /* classe's */
+
+.outStoryInner {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
 .text1 {
     font-size: 1.1rem;
@@ -85,11 +234,29 @@
 }
 
 .text2 {
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
+    font-size: 1.05rem;
+    margin-top: 1rem;
     color: var(--primary-titleColor-color);
     font-weight: 600;
     letter-spacing: 0.9px;
+}
+
+.product1 {
+    font-size: 0.813rem;
+    color: var(--primary-titleColor-color);
+    font-weight: 500;
+    letter-spacing: 0.9px;
+}
+
+.heading1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-titleColor-color);
+}
+
+.description1 {
+    font-size: 0.938rem;
+    color: var(--primary-textColor-color);
 }
 
 .b1 {
@@ -108,8 +275,23 @@
     box-shadow: 10px 6px 10px 1px rgb(223, 218, 218);
 }
 
+.b3 {
+    font-size: 0.938rem;
+    padding: 0.9rem 1.85rem;
+    color: #ffffff;
+    background-color: var(--primary-button2-color);
+    box-shadow: 10px 6px 10px 1px rgb(223, 218, 218);
+}
+
+.b4 {
+    font-size: 0.938rem;
+    padding: 0.9rem 1.85rem;
+    color: #ffffff;
+    background-color: var(--primary-button2-color);
+}
+
 .divLine {
-    width: 4rem;
-    height: 2px;
+    width: 4.5rem;
+    height: 1px;
     background-color: var(--primary-homeImageBox-color);
 }

@@ -1,20 +1,22 @@
-:root {
-    --primary-cardBackground-color: #FFFFFF;
-    --primary-homeImageBox-color: #FFB568;
-}
-
 #cardBox {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--primary-cardBackground-color);
-    box-shadow: 0px 10px 15px 5px rgb(235, 233, 233);
+    box-shadow: 0px 10px 15px 5px rgb(245, 244, 244);
+    border: 1px solid rgb(236, 234, 234);
 }
 
-#cardBoxImage {
-    width: 44%;
-    height: 54%;
+.cardBoxImage1 {
+    width: 43%;
+    height: 57%;
+}
+
+.cardBoxImage2 {
+    width: 42%;
+    height: 55%;
+    margin-bottom: 0.5rem;
 }
 
 #cardBoxImage img {
@@ -22,10 +24,54 @@
     height: 100%;
 }
 
-#priceCard {
+#productIcon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#reviewCardBox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+}
+
+#reviewUser h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-titleColor-color);
+}
+
+#reviewUser h4 {
+    font-size: 0.813rem;
+    color: var(--primary-textColor-color);
+}
+
+.dateText {
+    font-size: 0.938rem;
+    font-weight: 600;
+    color: var(--primary-titleColor-color);
+}
+
+.reviewText {
+    font-size: 0.813rem;
+    color: var(--primary-textColor-color);
+}
+
+.priceCard1 {
     margin-top: 0.6rem;
     margin-bottom: 1rem;
     font-weight: 500;
     font-size: 1.1rem;
+    color: var(--primary-homeImageBox-color);
+}
+
+.priceCard2 {
+    margin-top: 0.2rem;
+    font-weight: 500;
+    font-size: 0.918rem;
     color: var(--primary-homeImageBox-color);
 }
