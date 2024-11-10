@@ -1,0 +1,35 @@
+#logoIcon path {
+    fill: var(--primary-titleColor-color);
+}
+
+#cartIcon {
+    fill: var(--primary-action-color);
+}
+
+#leftArrow g rect {
+    fill: var(--primary-cardBackground-color);
+}
+
+#leftArrow path {
+    fill: var(--primary-homeImageBox-color);
+}
+
+#rightArrow g rect {
+    fill: var(--primary-cardBackground-color);
+}
+
+#rightArrow path {
+    fill: var(--primary-homeImageBox-color);
+}
+
+#commentNotes g rect {
+    fill: var(--primary-cardBackground-color);
+}
+
+#commentNotes path {
+    fill: var(--primary-homeImageBox-color);
+}
+
+.icons path {
+    fill: var(--primary-textColor-color);
+}

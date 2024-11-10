@@ -1,10 +1,10 @@
 const LeftArrow = () => {
     return (
-        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg id="leftArrow" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_40_214)">
-                <rect x="12" y="8" width="32" height="32" fill="white"/>
+                <rect x="12" y="8" width="32" height="32"/>
             </g>
-            <path d="M29.121 29L24.828 24.707H34.414V22.707H24.828L29.121 18.414L27.707 17L21 23.707L27.707 30.414L29.121 29Z" fill="#FFB568"/>
+            <path d="M29.121 29L24.828 24.707H34.414V22.707H24.828L29.121 18.414L27.707 17L21 23.707L27.707 30.414L29.121 29Z" />
         <defs>
             <filter id="filter0_d_40_214" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import "../css/carousel.css";
 import LeftArrow from '../svg/LeftArrow';
 import RightArrow from '../svg/RightArrow';
 import { reviews } from '../Data/data';

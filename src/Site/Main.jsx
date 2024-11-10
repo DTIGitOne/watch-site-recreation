@@ -7,6 +7,9 @@ import '../css/home.css'
 import { featuredWatches, newCollection, products } from '../Data/data';
 import outStory from "../Data/Images/story 1.png"
 import story2 from "../Data/Images/story 2.png";
+import FacebookIcon from '../svg/Facebook';
+import InstagramIcon from '../svg/InstagramIcon';
+import TwitterIcon from '../svg/Twitter';
 
 const MainPage = () => {
     return (
@@ -122,6 +125,54 @@ const MainPage = () => {
                 <div id='newCard'>
                     <Fade />
                 </div>
+            </div>
+            <div id='newsletterBox'>
+                <div id='newsletterInner'>
+                    <h3>Subscribe Our <br/> Newsletter</h3>
+                    <p>Don't miss out on your discounts. Subscribe to our email newsletter to get the best offers, discounts, coupons, gifts and much more.</p>
+                    <input type="text" placeholder='disabeld' disabled={true} />
+                    <button className='b5'>SUBSCRIBE</button>
+                </div>
+            </div>
+            <div id='linksBox'>
+                <div className='linksInner'>
+                    <h4>Our information</h4>
+                    <ul>
+                        <li>1234 - Peru</li>
+                        <li>La Libertad 43210</li>
+                        <li>123-456-789</li>
+                    </ul>
+                </div>
+                <div className='linksInner'>
+                    <h4>About Us</h4>
+                    <ul>
+                        <li>Support Center</li>
+                        <li>Customer Support</li>
+                        <li>About Us</li>
+                        <li>Copy Right</li>
+                    </ul>
+                </div>
+                <div className='linksInner'>
+                    <h4>Product</h4>
+                    <ul>
+                        <li>Road bikes</li>
+                        <li>Mountain bikes</li>
+                        <li>Electric</li>
+                        <li>Accesories</li>
+                    </ul>
+                </div>
+                <div className='linksInner'>
+                    <h4>Social</h4>
+                    <div>
+                        <FacebookIcon />
+                        <TwitterIcon />
+                        <InstagramIcon />
+                    </div>
+                </div>
+            </div>
+            <div id='copyrightBox'>
+                <div></div>
+                <span>&copy; Bedimcode. All rights reserved</span>
             </div>
         </div>
     )

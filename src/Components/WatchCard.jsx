@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { div } from "framer-motion/client";
 import ProductButtonIcon from "../svg/ProductButtonIcon";
+import NewIcon from "../svg/NewIcon";
 
 const WatchCard = ({ image, name, price, product, newW }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,10 @@ const WatchCard = ({ image, name, price, product, newW }) => {
                 width: "100%",
                 overflow: "hidden",
                 cursor: "pointer",
-                position: "relative"
+                position: "relative",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
             }}
         >
             {product ? (
@@ -29,11 +33,18 @@ const WatchCard = ({ image, name, price, product, newW }) => {
             ) : (
                 null
             )}
+            {newW ? (
+                <div id="newWatch">
+                    <NewIcon open={isOpen}/>
+                </div>
+            ) : (
+                null
+            )}
             <div className={product ? "cardBoxImage2" : "cardBoxImage1"}>
                 <img src={image} alt="" />
             </div>
-            <h4 className={product ? "product1" : "text2"}>{name}</h4>
-            <div className={product ? "priceCard2" : "priceCard1"}>${price}</div>
+            <h4 className={isOpen && newW ? "text3" : product ? "product1" : "text2"}>{name}</h4>
+            <div className={isOpen && newW ? "priceCard3" : product ? "priceCard2" : "priceCard1"}>${price}</div>
             <AnimatePresence>
                 {isOpen && (
                     <motion.div

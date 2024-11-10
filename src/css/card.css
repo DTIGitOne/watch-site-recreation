@@ -4,8 +4,8 @@
     justify-content: center;
     align-items: center;
     background-color: var(--primary-cardBackground-color);
-    box-shadow: 0px 10px 15px 5px rgb(245, 244, 244);
-    border: 1px solid rgb(236, 234, 234);
+    box-shadow: var(--primary-boxShadow-color);
+    border: var(--primary-borderCard-color);
 }
 
 .cardBoxImage1 {
@@ -30,6 +30,12 @@
     bottom: 0;
 }
 
+#newWatch {
+    position: absolute;
+    right: 4%;
+    top: 4%;
+}
+
 #reviewCardBox {
     width: 100%;
     height: auto;
@@ -40,24 +46,24 @@
 }
 
 #reviewUser h3 {
-    font-size: 1rem;
+    font-size: var(--primary-h3fontSize);
     font-weight: 500;
     color: var(--primary-titleColor-color);
 }
 
 #reviewUser h4 {
-    font-size: 0.813rem;
+    font-size: var(--primary-smallFontSize);
     color: var(--primary-textColor-color);
 }
 
 .dateText {
-    font-size: 0.938rem;
+    font-size: var(--primary-h4normalFontSize);
     font-weight: 600;
     color: var(--primary-titleColor-color);
 }
 
 .reviewText {
-    font-size: 0.813rem;
+    font-size: var(--primary-smallFontSize);
     color: var(--primary-textColor-color);
 }
 
@@ -65,13 +71,20 @@
     margin-top: 0.6rem;
     margin-bottom: 1rem;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: var(--primary-h3fontSize);
     color: var(--primary-homeImageBox-color);
 }
 
 .priceCard2 {
     margin-top: 0.2rem;
     font-weight: 500;
-    font-size: 0.918rem;
+    font-size: var(--primary-h4normalFontSize);
     color: var(--primary-homeImageBox-color);
+}
+
+.priceCard3 {
+    margin-top: 0.2rem;
+    font-weight: 500;
+    font-size: var(--primary-h4normalFontSize);
+    color: #2E2E2E;
 }
