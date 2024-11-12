@@ -20,7 +20,7 @@ const Fade = () => {
         {newWatches.map((item) => {
             return (
                 <div id='newCard'>
-                    <WatchCard image={item.Image} price={item.price} name={item.name} newW={true} />
+                    <WatchCard image={item.Image} price={item.price} name={item.name} newW={true} id={item.id} />
                 </div>
             );
         })}

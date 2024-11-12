@@ -21,67 +21,77 @@ export const newCollection = [
        id: 1,
        Image: Image1,
        text: "NEW WATCH COLLECTIONS B720",
+       name: "B720",
        desctiption: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
        price: 1245,
+       collection: "new"
     }
 ]
 
 export const featuredWatches = [
     {
-        id: 1,
-        Image: featured1,
-        name: "JAZZMASTER",
-        price: 1050,
-     },
-     {
         id: 2,
-        Image: featured2,
-        name: "INGERSOLL",
-        price: 250,
+        Image: featured1,
+        name: "Jazzmaster",
+        price: 1050,
+        collection: "featured"
      },
      {
         id: 3,
+        Image: featured2,
+        name: "Ingersoll",
+        price: 250,
+        collection: "featured"
+     },
+     {
+        id: 4,
         Image: featured3,
-        name: "ROSE GOLD",
+        name: "Rose Gold",
         price: 890,
+        collection: "featured"
      },
 ]
 
 export const products = [
    {
-       id: 1,
+       id: 5,
        Image: product1,
-       name: "SPIRIT ROSE",
+       name: "Spirit Rose",
        price: 1500,
        product: true,
+       collection: "products"
     },
     {
-       id: 2,
+       id: 6,
        Image: product2,
-       name: "KHAKI PILOT",
+       name: "Khaki Pilot",
        price: 1350,
        product: true,
+       collection: "products"
     },
     {
-       id: 3,
+       id: 7,
        Image: product3,
-       name: "JUBILEE BLACK",
+       name: "Jubilee Black",
        price: 870,
        product: true,
+       collection: "products"
     },
     {
-      id: 4,
+      id: 8,
       Image: product4,
-      name: "FOSIL ME3",
+      name: "Fosil ME3",
       price: 650,
       product: true,
+      collection: "products"
    },
    {
-      id: 5,
+      id: 9,
       Image: product5,
-      name: "DUCHEN",
+      name: "Duchen",
       price: 950,
       product: true,
+      collection: "products"
    },
 ]
 
@@ -114,27 +124,33 @@ export const reviews = [
 
 export const newWatches = [
    {
-       id: 1,
+       id: 10,
        Image: new1,
-       name: "LONGINES ROSE",
+       name: "Longines Rose",
        price: 980,
+       collection: "new"
     },
     {
-       id: 2,
+       id: 11,
        Image: new2,
-       name: "JAZZMASTER",
+       name: "Jazzmaster",
        price: 1150,
+       collection: "new"
     },
     {
-       id: 3,
+       id: 12,
        Image: new3,
-       name: "DREYFUSS GOLD",
+       name: "Dreyfuss Gold",
        price: 750,
+       collection: "new"
     },
     {
-      id: 4,
+      id: 13,
       Image: new4,
-      name: "PORTUGUESE ROSE",
+      name: "Portuguese Rose",
       price: 1590,
+      collection: "new"
    },
 ]
+
+export const mergedArray = newCollection.concat(featuredWatches, products, newWatches);

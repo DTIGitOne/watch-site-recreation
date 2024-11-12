@@ -6,6 +6,14 @@
     fill: var(--primary-action-color);
 }
 
+#SaleIcon rect {
+    fill: var(--primary-homeImageBox-color);
+}
+
+#closeIcon path {
+    fill: var(--primary-titleColor-color);
+}
+
 #leftArrow g rect {
     fill: var(--primary-cardBackground-color);
 }
@@ -32,4 +40,34 @@
 
 .icons path {
     fill: var(--primary-textColor-color);
+}
+
+#upArrow g rect {
+    fill: var(--primary-body-color);
+}
+
+#upArrow path {
+    fill: var(--primary-homeImageBox-color);
+}
+
+#TrashIcon path {
+    fill: var(--primary-homeImageBox-color);
+}
+
+#MinusIcon rect {
+    fill: var(--primary-cardBackground-color);
+    stroke: var(--primary-borderCard-color);
+}
+
+#PlusIcon rect {
+    fill: var(--primary-cardBackground-color);
+    stroke: var(--primary-borderCard-color);
+}
+
+#MinusIcon path {
+    fill: var(--primary-titleColor-color);
+}
+
+#PlusIcon path {
+    fill: var(--primary-titleColor-color);
 }

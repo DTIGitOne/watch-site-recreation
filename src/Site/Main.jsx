@@ -1,6 +1,8 @@
+import { useRef } from 'react';
 import Carousel from '../Components/Carousel';
 import NavBar from '../Components/NavBar';
 import ReviewCard from '../Components/ReviewCard';
+import ScrollToTopButton from '../Components/ScrollToTop';
 import Fade from '../Components/SlickCarousel';
 import WatchCard from '../Components/WatchCard';
 import '../css/home.css'
@@ -10,11 +12,17 @@ import story2 from "../Data/Images/story 2.png";
 import FacebookIcon from '../svg/Facebook';
 import InstagramIcon from '../svg/InstagramIcon';
 import TwitterIcon from '../svg/Twitter';
+import { addWatch } from '../Components/js/functions';
 
 const MainPage = () => {
+
+    const featuredRef = useRef(null);
+    const productsRef = useRef(null);
+    const newRef = useRef(null);
+
     return (
         <div>
-            <NavBar />
+            <NavBar  featured={featuredRef} products={productsRef} newWatch={newRef}/>
             {newCollection.map((list) => {
                 return (
                     <div className='flex flex-col justify-center items-center gap-7' key={list.id}>
@@ -38,13 +46,13 @@ const MainPage = () => {
                             </div>
                             <div className=' mt-11 w-full'>
                                 <button className='b1' disabled>Discover</button>
-                                <button className='b2'>ADD TO CART</button>
+                                <button className='b2' onClick={() => addWatch(list.id)}>ADD TO CART</button>
                             </div>
                         </div>
                     </div>
                 );
             })}
-            <div id='featuredBox'>
+            <div ref={featuredRef} id='featuredBox'>
                 <div className=' flex flex-col w-full justify-center items-center gap-3'>
                    <div className='divLine'></div>
                    <h3 className='text1'>FEATURED</h3>
@@ -53,7 +61,7 @@ const MainPage = () => {
                     {featuredWatches.map((list) => {
                         return (
                             <div id='featuredCard'>
-                                 <WatchCard name={list.name} image={list.Image} price={list.price} product={false} />
+                                 <WatchCard name={list.name} sale={true} image={list.Image} price={list.price} product={false} id={list.id} />
                             </div>
                         );
                     })}
@@ -87,7 +95,7 @@ const MainPage = () => {
                     </div>
                 </div>
             </div>
-            <div id='productsBox'>
+            <div ref={productsRef} id='productsBox'>
                 <div className=' flex flex-col w-full justify-center items-center gap-3'>
                    <div className='divLine'></div>
                    <h3 className='text1'>PRODUCTS</h3>
@@ -97,7 +105,7 @@ const MainPage = () => {
                     {products.map((product) => {
                         return (
                             <div id='cardProduct'>
-                                <WatchCard name={product.name} image={product.Image} price={product.price} product={true} />
+                                <WatchCard name={product.name} image={product.Image} price={product.price} product={true} id={product.id} />
                             </div>
                         );
                     })}
@@ -117,7 +125,7 @@ const MainPage = () => {
                     </div>
                 </div>
             </div>
-            <div id='newArrivalsBox'>
+            <div ref={newRef} id='newArrivalsBox'>
                 <div className=' flex flex-col w-full justify-center items-center gap-3'>
                    <div className='divLine'></div>
                    <h3 className='text1'>NEW ARRIVALS</h3>
@@ -174,6 +182,7 @@ const MainPage = () => {
                 <div></div>
                 <span>&copy; Bedimcode. All rights reserved</span>
             </div>
+            <ScrollToTopButton />
         </div>
     )
 }

@@ -2,12 +2,18 @@ import "../css/card.css";
 import "../css/home.css";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { div } from "framer-motion/client";
 import ProductButtonIcon from "../svg/ProductButtonIcon";
 import NewIcon from "../svg/NewIcon";
+import SaleIcon from "../svg/SaleIcon";
+import { addWatch } from "./js/functions";
 
-const WatchCard = ({ image, name, price, product, newW }) => {
+const WatchCard = ({ image, name, price, product, newW, sale, id }) => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const addCart = () => {
+        addWatch(id)
+        setIsOpen(false);
+    }
 
     return (
         <motion.div
@@ -33,6 +39,13 @@ const WatchCard = ({ image, name, price, product, newW }) => {
             ) : (
                 null
             )}
+            {sale ? (
+                <div id="SaleIconBox">
+                    <SaleIcon />
+                </div>
+            ) : (
+                null
+            )}
             {newW ? (
                 <div id="newWatch">
                     <NewIcon open={isOpen}/>
@@ -43,7 +56,7 @@ const WatchCard = ({ image, name, price, product, newW }) => {
             <div className={product ? "cardBoxImage2" : "cardBoxImage1"}>
                 <img src={image} alt="" />
             </div>
-            <h4 className={isOpen && newW ? "text3" : product ? "product1" : "text2"}>{name}</h4>
+            <h4 className={isOpen && newW ? "text3" : product ? "product1" : "text2"}>{name.toUpperCase()}</h4>
             <div className={isOpen && newW ? "priceCard3" : product ? "priceCard2" : "priceCard1"}>${price}</div>
             <AnimatePresence>
                 {isOpen && (
@@ -60,7 +73,7 @@ const WatchCard = ({ image, name, price, product, newW }) => {
                         }}
                         exit={{ opacity: 0, y: -20 }}
                     >
-                        <button className={newW ? "b4" : "b2"}>ADD TO CART</button>
+                        <button onClick={addCart} className={newW ? "b4" : "b2"}>ADD TO CART</button>
                     </motion.div>
                 )}
             </AnimatePresence>

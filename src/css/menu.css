@@ -1,0 +1,70 @@
+#menuBox {
+    background-color: var(--primary-body-color);
+    z-index: 10;
+    position: fixed;
+    right: 0;
+    top: 0;
+    animation-fill-mode: forwards;
+}
+
+.openAnimation {
+    animation-name: OpenMenu;
+    animation-duration: 0.3s;
+}
+
+.closeAnimation {
+    animation-name: CloseMenu;
+    animation-duration: 0.3s;
+}
+
+#menuBox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation-fill-mode: forwards;
+    padding-top: 7rem;
+}
+
+#menuBox button:first-child {
+    font-weight: 500;
+    font-size: var(--primary-h1fontSize);
+    color: var(--primary-homeImageBox-color);
+}
+
+#menuBox button {
+    font-weight: 500;
+    font-size: var(--primary-h1fontSize);
+    color: var(--primary-titleColor-color);
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.35s;
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.35s;
+}
+
+@keyframes OpenMenu {
+    0% {height: 0svh; width: 0svw;}
+    100% {height: 100svh; width: 100svw;}
+}
+
+@keyframes CloseMenu {
+    0% {height: 100svh; width: 100svw;}
+    100% {height: 0svh; width: 0svw;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}

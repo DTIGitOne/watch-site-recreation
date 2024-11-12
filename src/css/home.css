@@ -306,6 +306,18 @@
     color: var(--primary-textColorLinks-color);
 }
 
+#boxWidth {
+    width: 85%;
+    max-height: 55vh;
+    overflow-y: scroll;
+}
+
+#CartBox h2 {
+    color: var(--primary-titleColor-color);
+    font-size: var(--primary-h2fontSize);
+    font-weight: 500;
+}
+
 /* classe's */
 
 .outStoryInner {

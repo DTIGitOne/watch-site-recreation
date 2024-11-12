@@ -1,16 +1,28 @@
 import { useEffect, useState } from "react";
 import CartIcon from "../svg/CartIcon";
 import LogoSVG from "../svg/Logo";
-import MenuIcon from "../svg/MenuIcon";
 import ThemeButton1 from "../svg/ThemeButton1";
 import ThemeButton2 from "../svg/ThemeButton2";
+import Menu from "./DropdownMenu";
+import MenuIcon from "../svg/MenuIcon";
+import CloseIcon from "../svg/CloseIcon";
 
-const NavBar = () => {
+const NavBar = ({featured, products, newWatch}) => {
     const [theme, setTheme] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [cartOpen, setCartOpen] = useState(false);
 
     const handleTheme = () => {
         setTheme((prev) => !prev);
     }
+
+    const toggleOpenCartState = () => {
+        setCartOpen((prev) => !prev);
+    };
+
+    const toggleOpenState = () => {
+        setOpen((prev) => !prev);
+    };
 
     useEffect(() => {
         if (theme) {
@@ -51,8 +63,33 @@ const NavBar = () => {
                     <ThemeButton1 />
                    )}
                 </button>
-                <CartIcon />
-                <MenuIcon />
+                {open ? (
+                    null
+                ) : (
+                    cartOpen ? (
+                        <button className="z-50" onClick={toggleOpenCartState}>
+                            <CloseIcon />
+                        </button>
+                    ) : (
+                        <button className="z-50" onClick={toggleOpenCartState}>
+                            <CartIcon />
+                        </button>
+                    )
+                )}
+                {cartOpen ? (
+                    null
+                ) : (
+                    open ? (
+                        <button className="z-50" onClick={toggleOpenState}>
+                          <CloseIcon />
+                        </button>
+                    ) : (
+                        <button className="z-50" onClick={toggleOpenState}>
+                          <MenuIcon />
+                        </button>
+                    )
+                )}
+                <Menu isOpen={open} featured={featured} products={products} newWatch={newWatch} cart={cartOpen} toggle={toggleOpenState} toggleCart={toggleOpenCartState}/>
             </div>
         </div>
     );
