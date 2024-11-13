@@ -1,40 +1,88 @@
 import "../css/card.css";
 import "../css/home.css";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductButtonIcon from "../svg/ProductButtonIcon";
 import NewIcon from "../svg/NewIcon";
 import SaleIcon from "../svg/SaleIcon";
 import { addWatch } from "./js/functions";
+import { mergedArray } from "../Data/data";
 
 const WatchCard = ({ image, name, price, product, newW, sale, id }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [cartColor, setCartColor] = useState("#FFFFFF");
+    const [buttonColor, setButtonColor] = useState("#FFFFFF");
 
-    const addCart = () => {
-        addWatch(id)
-        setIsOpen(false);
+    const addCart = (event) => {
+        const watchesCart = JSON.parse(localStorage.getItem('watches')) || [];
+        const matchedWatches = watchesCart
+            .map(cartItem => {
+                const watch = mergedArray.find(watch => watch.id === cartItem.id);
+                return watch ? { ...watch, amount: cartItem.amount } : null;
+            })
+            .filter(Boolean);
+
+        const watch = matchedWatches.find(item => item.id === id);
+        if (watch && watch.amount > 2) {
+            setButtonColor("#ff7658")
+            console.log("no");
+        } else {
+            event.stopPropagation();
+            setButtonColor("var(--primary-homeImageBox-color)")
+            console.log("ok");
+            setIsOpen(true);
+            addWatch(id);
+
+            setTimeout(() => {
+                setIsOpen(false);
+                setButtonColor("#FFFFFF")
+            }, 300);
+        }
+    }
+
+    const addCart2 = () => {
+        const watchesCart = JSON.parse(localStorage.getItem('watches')) || [];
+        const matchedWatches = watchesCart
+            .map(cartItem => {
+                const watch = mergedArray.find(watch => watch.id === cartItem.id);
+                return watch ? { ...watch, amount: cartItem.amount } : null;
+            })
+            .filter(Boolean);
+
+        const watch = matchedWatches.find(item => item.id === id);
+        if (watch && watch.amount > 2) {
+            setCartColor("red");
+            console.log("no");
+        } else {
+            setCartColor("var(--primary-homeImageBox-color)")
+            console.log("ok");
+            setIsOpen(true);
+            addWatch(id);
+
+            setTimeout(() => {
+                setIsOpen(false);
+                setCartColor("#FFFFFF");
+            }, 300);
+        }
     }
 
     return (
-        <motion.div
+         <div
             id="cardBox"
-            onClick={() => setIsOpen(true)}
-            animate={{height: isOpen ? "100%" : "100%", backgroundColor: isOpen ? newW ? "var(--primary-homeImageBox-color)" : "" : ""}}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            onClick={product ? (addCart2) : (() => setIsOpen(true))}
+            className=""
             style={{
-                height: "100%",
                 width: "100%",
+                height: "100%",
                 overflow: "hidden",
                 cursor: "pointer",
                 position: "relative",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center"
+                backgroundColor: isOpen ? newW ? "var(--primary-homeImageBox-color)" : "" : "",
             }}
         >
             {product ? (
                 <div id="productIcon">
-                    <ProductButtonIcon />
+                    <ProductButtonIcon added={cartColor}/>
                 </div>
             ) : (
                 null
@@ -58,26 +106,26 @@ const WatchCard = ({ image, name, price, product, newW, sale, id }) => {
             </div>
             <h4 className={isOpen && newW ? "text3" : product ? "product1" : "text2"}>{name.toUpperCase()}</h4>
             <div className={isOpen && newW ? "priceCard3" : product ? "priceCard2" : "priceCard1"}>${price}</div>
-            <AnimatePresence>
+            {product ? (
+                null
+            ) : (
+                <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ height: isOpen ? "5vh" : "5vh",opacity: 1, y: 0 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 30, duration: 0.3 }}
-                        style={{
-                            height: "50px",
-                            width: "100%",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center"
-                        }}
-                        exit={{ opacity: 0, y: -20 }}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        style={{ width: "100%", overflow: "hidden" }}
+                        className="flex justify-center items-center mb-1 mt-1"
                     >
-                        <button onClick={addCart} className={newW ? "b4" : "b2"}>ADD TO CART</button>
+                        <button onClick={addCart} className={newW ? "b4" : "b6"} style={{color: buttonColor}}>
+                            ADD TO CART
+                        </button>
                     </motion.div>
                 )}
-            </AnimatePresence>
-        </motion.div>
+                </AnimatePresence>
+            )}
+        </div>
     );
 };
 

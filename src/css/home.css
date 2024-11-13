@@ -1,441 +1,450 @@
 :root {
-    /* color's */
-    --primary-body-color: #FCFCFC;
-    --primary-homeImageBox-color: #FFB568;
-    --primary-textColorLinks-color: #8C8C8C;
-    --primary-titleColor-color: #2E2E2E;
-    --primary-textColor-color: #595959;
-    --primary-button1-color: #BFBFBF;
-    --primary-button2-color: #2B2B2B;
-    --primary-borderColor-color: #F0F0F0;
-    --primary-cardBackground-color: #FFFFFF;
-    --primary-boxShadow-color: 10px 6px 10px 1px rgb(223, 218, 218);
-    --primary-borderCard-color: 1px solid rgb(236, 234, 234);
-    --primary-action-color: #2B2B2B;
+  /* color's */
+  --primary-body-color: #fcfcfc;
+  --primary-homeImageBox-color: #ffb568;
+  --primary-textColorLinks-color: #8c8c8c;
+  --primary-titleColor-color: #2e2e2e;
+  --primary-textColor-color: #595959;
+  --primary-button1-color: #bfbfbf;
+  --primary-button2-color: #2b2b2b;
+  --primary-borderColor-color: #f0f0f0;
+  --primary-cardBackground-color: #ffffff;
+  --primary-boxShadow-color: 10px 6px 10px 1px rgb(223, 218, 218);
+  --primary-borderCard-color: 1px solid rgb(236, 234, 234);
+  --primary-action-color: #2b2b2b;
 
-    /* font's */
-    --primary-smallerFontSize: 0.75rem;
-    --primary-smallFontSize: 0.813rem;
-    --primary-h4normalFontSize: 0.938rem;
-    --primary-h3fontSize: 1rem;
-    --primary-h2fontSize: 1.25rem;
-    --primary-h1fontSize: 1.5rem;
-    --primary-BiggestFontSize: 2rem;
+  /* font's */
+  --primary-smallerFontSize: 0.75rem;
+  --primary-smallFontSize: 0.813rem;
+  --primary-h4normalFontSize: 0.938rem;
+  --primary-h3fontSize: 1rem;
+  --primary-h2fontSize: 1.25rem;
+  --primary-h1fontSize: 1.5rem;
+  --primary-BiggestFontSize: 2rem;
 }
 
 /* id's */
 
 #homeImageBox {
-    height: 53vh;
-    width: 70%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    background-color: var(--primary-homeImageBox-color);
+  height: 53vh;
+  width: 70%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: var(--primary-homeImageBox-color);
 }
 
 #imageBox {
-    width: 94%;
-    height: 77%;
-    object-fit: cover;
-    overflow: hidden;
-    margin-bottom: 1.1rem;
+  width: 92%;
+  height: 77%;
+  object-fit: cover;
+  overflow: hidden;
+  margin-bottom: 1.1rem;
 }
 
 #imageBox img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 #SocialBox {
-    margin-top: 6rem;
-    width: 30%;
-    rotate: 270deg;
-    display: flex;
-    font-size: var(--primary-smallerFontSize);
-    color: var(--primary-textColorLinks-color);
-    gap: 1rem;
-    padding-bottom: 2.3rem;
+  margin-top: 6rem;
+  width: 30%;
+  rotate: 270deg;
+  display: flex;
+  font-size: var(--primary-smallerFontSize);
+  color: var(--primary-textColorLinks-color);
+  gap: 1rem;
+  padding-bottom: 2.3rem;
 }
 
 #TopDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
 }
 
 #titleTop {
-    font-size: var(--primary-BiggestFontSize);
-    line-height: 1.4;
-    font-weight: 600;
-    color: var(--primary-titleColor-color);
+  font-size: var(--primary-BiggestFontSize);
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--primary-titleColor-color);
 }
 
 #descriptionText {
-    margin-top: 0.9rem;
-    font-size: var(--primary-h4normalFontSize);
-    color: var(--primary-textColor-color);
+  margin-top: 0.9rem;
+  font-size: var(--primary-h4normalFontSize);
+  color: var(--primary-textColor-color);
 }
 
 #priceBox {
-    margin-top: 1.3rem;
-    font-weight: 500;
-    font-size: var(--primary-h2fontSize);
-    color: var(--primary-homeImageBox-color);
+  margin-top: 1.3rem;
+  font-weight: 500;
+  font-size: var(--primary-h2fontSize);
+  color: var(--primary-homeImageBox-color);
 }
 
 #featuredBox {
-    margin-top: 6rem;
+  margin-top: 6rem;
 }
 
 #ourStoryBox {
-    margin-top: 6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 3.5rem;
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3.5rem;
 }
 
 #ourStoryOuterBox {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #ourStoryImageBox1 {
-    width: 88%;
-    height: 37vh;
-    position: relative;
+  width: 88%;
+  height: 37vh;
+  position: relative;
 }
 
 #outStoryInnerBox1 {
-    height: 84%;
-    width: 84%;
-    object-fit: cover;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
+  height: 84%;
+  width: 84%;
+  object-fit: cover;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
 }
 
 #outStoryInnerBox1 img {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 #outStoryInnerBox2 {
-    height: 84%;
-    width: 84%;
-    background-color: var(--primary-homeImageBox-color);
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  height: 84%;
+  width: 84%;
+  background-color: var(--primary-homeImageBox-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 #productsBox {
-    margin-top: 6rem;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  margin-top: 6rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #productsListBox {
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 3rem;
-    gap: 1.6rem;
-    padding: 0.4rem;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  gap: 1.6rem;
+  padding: 0.4rem;
 }
 
 #featuredCard {
-    height: 46vh;
-    width: 85vw;
+  height: 46vh;
+  width: 85vw;
 }
 
 #cardProduct {
-    width: 45%;
-    height: 25vh;
+  width: 45%;
+  min-height: 25vh;
 }
 
 #commentBox {
-    margin-top: 6rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #commentInner {
-    width: 85%;
+  width: 85%;
 }
 
 #ProductsImageOuterBox {
-    margin-top: 3rem;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 3rem;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #ProductsImageImageBox1 {
-    width: 88%;
-    height: 37vh;
-    position: relative;
+  width: 88%;
+  height: 37vh;
+  position: relative;
 }
 
 #ProductsImageInnerBox1 {
-    height: 84%;
-    width: 84%;
-    object-fit: cover;
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
+  height: 84%;
+  width: 84%;
+  object-fit: cover;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
 }
 
 #ProductsImageInnerBox1 img {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 #ProductsImageInnerBox2 {
-    height: 84%;
-    width: 84%;
-    background-color: var(--primary-homeImageBox-color);
-    position: absolute;
-    right: 0;
-    top: 0;
+  height: 84%;
+  width: 84%;
+  background-color: var(--primary-homeImageBox-color);
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 #newArrivalsBox {
-    margin-top: 6rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 2.7rem;
+  margin-top: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.7rem;
 }
 
 #newCard {
-    height: 46vh;
-    width: 85vw;
-    margin-bottom: 4rem;
+  height: 46vh;
+  width: 85vw;
+  margin-bottom: 4rem;
 }
 
 #newsletterBox {
-    margin-top: 1.5rem;
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 1.5rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #newsletterInner {
-    width: 85%;
-    background-color: var(--primary-homeImageBox-color);
-    height: auto;
-    padding: 2.8rem 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
+  width: 85%;
+  background-color: var(--primary-homeImageBox-color);
+  height: auto;
+  padding: 2.8rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 #newsletterInner h3 {
-    font-weight: 500;
-    font-size: var(--primary-h1fontSize);
-    color: #2E2E2E;
-    text-align: center;
+  font-weight: 500;
+  font-size: var(--primary-h1fontSize);
+  color: #2e2e2e;
+  text-align: center;
 }
 
 #newsletterInner input {
-    color: var(--primary-textColorLinks-color);
-    background-color: #F0F0F0;
-    width: 100%;
-    padding: 1.2rem;
-    font-size: var(--primary-smallerFontSize);
+  color: var(--primary-textColorLinks-color);
+  background-color: #f0f0f0;
+  width: 100%;
+  padding: 1.2rem;
+  font-size: var(--primary-smallerFontSize);
 }
 
 #newsletterInner p {
-    color: #595959;
-    font-size: var(--primary-h4normalFontSize);
-    text-align: center;
-    margin: 0.3rem 0.3rem 0.8rem 0.3rem;
+  color: #595959;
+  font-size: var(--primary-h4normalFontSize);
+  text-align: center;
+  margin: 0.3rem 0.3rem 0.8rem 0.3rem;
 }
 
 #linksBox {
-    margin-top: 4.7rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.8rem;
+  margin-top: 4.7rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
 }
 
 #copyrightBox {
-    margin-top: 2rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #copyrightBox div {
-    width: 80%;
-    height: 1px;
-    background-color: #F0F0F0;
+  width: 80%;
+  height: 1px;
+  background-color: #f0f0f0;
 }
 
 #copyrightBox span {
-    padding: 2rem;
-    font-size: var(--primary-smallerFontSize);
-    color: var(--primary-textColorLinks-color);
+  padding: 2rem;
+  font-size: var(--primary-smallerFontSize);
+  color: var(--primary-textColorLinks-color);
 }
 
 #boxWidth {
-    width: 85%;
-    max-height: 55vh;
-    overflow-y: scroll;
+  width: 85%;
+  max-height: 55vh;
+  overflow-y: scroll;
 }
 
 #CartBox h2 {
-    color: var(--primary-titleColor-color);
-    font-size: var(--primary-h2fontSize);
-    font-weight: 500;
+  color: var(--primary-titleColor-color);
+  font-size: var(--primary-h2fontSize);
+  font-weight: 500;
 }
 
 /* classe's */
 
 .outStoryInner {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .text1 {
-    font-size: var(--primary-h2fontSize);
-    color: var(--primary-titleColor-color);
-    font-weight: 500;
-    letter-spacing: 0.9px;
+  font-size: var(--primary-h3fontSize);
+  color: var(--primary-titleColor-color);
+  font-weight: 500;
+  letter-spacing: 0.9px;
 }
 
 .text2 {
-    font-size: var(--primary-h2fontSize);
-    margin-top: 1rem;
-    color: var(--primary-titleColor-color);
-    font-weight: 600;
-    letter-spacing: 0.9px;
+  font-size: var(--primary-h3fontSize);
+  margin-top: 1rem;
+  color: var(--primary-titleColor-color);
+  font-weight: 600;
+  letter-spacing: 0.9px;
 }
 
 .text3 {
-    font-size: var(--primary-h2fontSize);
-    margin-top: 1rem;
-    color: #2B2B2B;
-    font-weight: 600;
-    letter-spacing: 0.9px;
+  font-size: var(--primary-h3fontSize);
+  margin-top: 1rem;
+  color: #2b2b2b;
+  font-weight: 600;
+  letter-spacing: 0.9px;
 }
 
 .product1 {
-    font-size: var(--primary-smallFontSize);
-    color: var(--primary-titleColor-color);
-    font-weight: 500;
-    letter-spacing: 0.9px;
+  font-size: var(--primary-smallFontSize);
+  color: var(--primary-titleColor-color);
+  font-weight: 500;
+  letter-spacing: 0.9px;
 }
 
 .heading1 {
-    font-size: var(--primary-h1fontSize);
-    font-weight: 500;
-    color: var(--primary-titleColor-color);
+  font-size: var(--primary-h1fontSize);
+  font-weight: 500;
+  color: var(--primary-titleColor-color);
 }
 
 .description1 {
-    font-size: var(--primary-h4normalFontSize);
-    color: var(--primary-textColor-color);
+  font-size: var(--primary-h4normalFontSize);
+  color: var(--primary-textColor-color);
 }
 
 .b1 {
-    font-size: var(--primary-h4normalFontSize);
-    font-weight: 600;
-    padding: 0.85rem 1.5rem;
-    color: #595959;
-    background-color: var(--primary-button1-color);
+  font-size: var(--primary-h4normalFontSize);
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  color: #595959;
+  background-color: var(--primary-button1-color);
 }
 
 .b2 {
-    font-size: var(--primary-h4normalFontSize);
-    padding: 1.2rem 2rem;
-    color: #ffffff;
-    background-color: var(--primary-button2-color);
-    box-shadow: var(--primary-boxShadow-color);
+  font-size: var(--primary-h4normalFontSize);
+  padding: 1.2rem 2rem;
+  background-color: var(--primary-button2-color);
+  box-shadow: var(--primary-boxShadow-color);
+  transition: all 0.2s ease-in-out;
 }
 
 .b3 {
-    font-size: var(--primary-h4normalFontSize);
-    padding: 0.9rem 1.85rem;
-    color: #ffffff;
-    background-color: var(--primary-button2-color);
-    box-shadow: var(--primary-boxShadow-color);
+  font-size: var(--primary-h4normalFontSize);
+  padding: 0.9rem 1.85rem;
+  color: #ffffff;
+  background-color: var(--primary-button2-color);
+  box-shadow: var(--primary-boxShadow-color);
+  transition: all 0.2s ease-in-out;
 }
 
 .b4 {
-    font-size: var(--primary-h4normalFontSize);
-    padding: 0.9rem 1.85rem;
-    color: #ffffff;
-    background-color: var(--primary-button2-color);
+  font-size: var(--primary-h4normalFontSize);
+  padding: 0.9rem 1.85rem;
+  background-color: var(--primary-button2-color);
+  transition: all 0.2s ease-in-out;
 }
 
 .b5 {
-    font-size: var(--primary-h4normalFontSize);
-    width: 100%;
-    padding: 1.1rem 0rem;
-    color: #ffffff;
-    background-color: var(--primary-button2-color);
+  font-size: var(--primary-h4normalFontSize);
+  width: 100%;
+  padding: 1.1rem 0rem;
+  color: #ffffff;
+  background-color: var(--primary-button2-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.b6 {
+  font-size: var(--primary-smallFontSize);
+  padding: 1rem 1.9rem;
+  background-color: var(--primary-button2-color);
+  transition: all 0.2s ease-in-out;
 }
 
 .divLine {
-    width: 4.5rem;
-    height: 1px;
-    background-color: var(--primary-homeImageBox-color);
+  width: 4.5rem;
+  height: 1px;
+  background-color: var(--primary-homeImageBox-color);
 }
 
 .linksInner {
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .linksInner h4 {
-    color: var(--primary-titleColor-color);
-    font-size: var(--primary-h2fontSize);
-    font-weight: 500;
-    letter-spacing: 0.7px;
+  color: var(--primary-titleColor-color);
+  font-size: var(--primary-h2fontSize);
+  font-weight: 500;
+  letter-spacing: 0.7px;
 }
 
 .linksInner ul {
-    color: var(--primary-textColor-color);
-    font-size: var(--primary-h4normalFontSize);
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  color: var(--primary-textColor-color);
+  font-size: var(--primary-h4normalFontSize);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .linksInner div {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }

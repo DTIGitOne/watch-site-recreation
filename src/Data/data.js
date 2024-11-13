@@ -19,7 +19,8 @@ import new4 from "../Data/Images/new4.png";
 export const newCollection = [
     {
        id: 1,
-       Image: Image1,
+       image: Image1,
+       Image: product1,
        text: "NEW WATCH COLLECTIONS B720",
        name: "B720",
        desctiption: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",

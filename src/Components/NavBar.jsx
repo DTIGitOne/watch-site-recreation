@@ -8,22 +8,30 @@ import MenuIcon from "../svg/MenuIcon";
 import CloseIcon from "../svg/CloseIcon";
 
 const NavBar = ({featured, products, newWatch}) => {
-    const [theme, setTheme] = useState(false);
+    const [theme, setTheme] = useState(null);
     const [open, setOpen] = useState(false);
     const [cartOpen, setCartOpen] = useState(false);
 
+    useEffect(() => {
+        const themeStorage = localStorage.getItem("theme");
+        setTheme(themeStorage ? JSON.parse(themeStorage) : false); // Parse to handle boolean value
+    }, []);
+    
     const handleTheme = () => {
-        setTheme((prev) => !prev);
-    }
-
+        setTheme((prev) => {
+            const newTheme = !prev;
+            localStorage.setItem("theme", JSON.stringify(newTheme)); // Store the updated theme
+            return newTheme;
+        });
+    };
+    
     const toggleOpenCartState = () => {
         setCartOpen((prev) => !prev);
     };
-
+    
     const toggleOpenState = () => {
         setOpen((prev) => !prev);
     };
-
     useEffect(() => {
         if (theme) {
             document.documentElement.style.setProperty("--primary-body-color", "#1F1F1F");
@@ -46,7 +54,7 @@ const NavBar = ({featured, products, newWatch}) => {
             document.documentElement.style.setProperty("--primary-cardBackground-color", "#FFFFFF");
             document.documentElement.style.setProperty("--primary-borderCard-color", "1px solid rgb(236, 234, 234)");
             document.documentElement.style.setProperty("--primary-action-color", "#2B2B2B");
-            document.documentElement.style.setProperty("--primary-boxShadow-color", "10px 6px 10px 1px rgb(223, 218, 218)");
+            document.documentElement.style.setProperty("--primary-boxShadow-color", "0px 0px 0px 0px rgb(223, 218, 218)");
         }
     }, [theme]);
 

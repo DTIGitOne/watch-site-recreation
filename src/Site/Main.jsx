@@ -1,12 +1,11 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Carousel from '../Components/Carousel';
 import NavBar from '../Components/NavBar';
-import ReviewCard from '../Components/ReviewCard';
 import ScrollToTopButton from '../Components/ScrollToTop';
 import Fade from '../Components/SlickCarousel';
 import WatchCard from '../Components/WatchCard';
 import '../css/home.css'
-import { featuredWatches, newCollection, products } from '../Data/data';
+import { featuredWatches, mergedArray, newCollection, products } from '../Data/data';
 import outStory from "../Data/Images/story 1.png"
 import story2 from "../Data/Images/story 2.png";
 import FacebookIcon from '../svg/Facebook';
@@ -15,10 +14,38 @@ import TwitterIcon from '../svg/Twitter';
 import { addWatch } from '../Components/js/functions';
 
 const MainPage = () => {
+    const [buttonColor, setButtonColor] = useState("#FFFFFF");
 
     const featuredRef = useRef(null);
     const productsRef = useRef(null);
     const newRef = useRef(null);
+
+    const addCart = (id, event) => {
+        const watchesCart = JSON.parse(localStorage.getItem('watches')) || [];
+        const matchedWatches = watchesCart
+            .map(cartItem => {
+                const watch = mergedArray.find(watch => watch.id === cartItem.id);
+                return watch ? { ...watch, amount: cartItem.amount } : null;
+            })
+            .filter(Boolean);
+    
+        newCollection.forEach((item) => {
+            const watch = matchedWatches.find(item => item.id === id);
+    
+            if (watch && watch.amount > 2) {
+                setButtonColor("#ff7658");
+                console.log("no");
+            } else {
+                addWatch(id);
+                setButtonColor("var(--primary-homeImageBox-color)");
+                console.log("ok");
+    
+                setTimeout(() => {
+                    setButtonColor("#FFFFFF");
+                }, 300);
+            }
+        });
+    };
 
     return (
         <div>
@@ -34,7 +61,7 @@ const MainPage = () => {
                           </div>
                           <div id='homeImageBox'>
                             <div id='imageBox'>
-                               <img src={list.Image} alt="" />
+                               <img src={list.image} alt="" />
                             </div>
                           </div>
                         </div>
@@ -46,7 +73,7 @@ const MainPage = () => {
                             </div>
                             <div className=' mt-11 w-full'>
                                 <button className='b1' disabled>Discover</button>
-                                <button className='b2' onClick={() => addWatch(list.id)}>ADD TO CART</button>
+                                <button className='b2' style={{color: buttonColor}} onClick={() => addCart(list.id)}>ADD TO CART</button>
                             </div>
                         </div>
                     </div>
@@ -57,7 +84,7 @@ const MainPage = () => {
                    <div className='divLine'></div>
                    <h3 className='text1'>FEATURED</h3>
                 </div>
-                <div className=' flex flex-col justify-center items-center gap-10 mt-10'>
+                <div className=' flex flex-col justify-center gap-10 items-center mt-10'>
                     {featuredWatches.map((list) => {
                         return (
                             <div id='featuredCard'>

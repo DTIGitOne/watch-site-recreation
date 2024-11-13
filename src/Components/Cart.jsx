@@ -26,6 +26,14 @@ const Cart = () => {
         localStorage.setItem('watches', JSON.stringify(watchesCart));
     };
 
+    const deleteItem = (id) => {
+        const updatedItems = cartItems.filter(item => item.id !== id);
+        setCartItems(updatedItems);
+        
+        const watchesCart = updatedItems.map(({ id, amount }) => ({ id, amount }));
+        localStorage.setItem('watches', JSON.stringify(watchesCart));
+    };
+
     const totalAmount = cartItems.reduce((sum, item) => sum + item.amount, 0);
     const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.amount, 0);
 
@@ -44,6 +52,7 @@ const Cart = () => {
                         amount={item.amount}
                         onIncrement={() => updateCartItemAmount(item.id, item.amount + 1)}
                         onDecrement={() => item.amount > 1 && updateCartItemAmount(item.id, item.amount - 1)}
+                        onDelete={() => deleteItem(item.id)}
                     />
                 ))}
             </div>

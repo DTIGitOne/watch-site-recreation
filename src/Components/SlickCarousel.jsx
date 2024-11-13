@@ -9,6 +9,8 @@ const Fade = () => {
     infinite: true,
     speed: 500,
     autoplay: 500,
+    pauseOnHover: true,
+    pauseOnFocus: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     waitForAnimate: false,

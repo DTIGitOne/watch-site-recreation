@@ -3,7 +3,7 @@ import MinusIcon from "../svg/MinusIcon";
 import PlusIcon from "../svg/PlusIcon";
 import TrashIcon from "../svg/TrashIcon";
 
-const ProductCard = ({ image, name, price, id, amount: initialAmount, onIncrement, onDecrement }) => {
+const ProductCard = ({ image, name, price, id, amount: initialAmount, onIncrement, onDecrement, onDelete }) => {
     const [amount, setAmount] = useState(initialAmount);
     const [removed, setRemoved] = useState(false);
 
@@ -34,7 +34,7 @@ const ProductCard = ({ image, name, price, id, amount: initialAmount, onIncremen
     };
 
     const removeItem = () => {
-        onDecrement(0)
+        onDelete()
         const watchesCart = JSON.parse(localStorage.getItem('watches')) || [];
         const updatedCart = watchesCart.filter(watch => watch.id !== id);
         localStorage.setItem('watches', JSON.stringify(updatedCart));
