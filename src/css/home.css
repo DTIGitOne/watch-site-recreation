@@ -34,6 +34,10 @@
   background-color: var(--primary-homeImageBox-color);
 }
 
+#firstBox {
+  flex-direction: column;
+}
+
 #imageBox {
   width: 92%;
   height: 77%;
@@ -92,6 +96,14 @@
 
 #ourStoryBox {
   margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+#ourStoryBoxInner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -263,6 +275,7 @@
 #newsletterInner input {
   color: var(--primary-textColorLinks-color);
   background-color: #f0f0f0;
+  margin-bottom: 0.8rem;
   width: 100%;
   padding: 1.2rem;
   font-size: var(--primary-smallerFontSize);
@@ -279,7 +292,6 @@
   margin-top: 4.7rem;
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.8rem;
@@ -320,11 +332,21 @@
 
 /* classe's */
 
-.outStoryInner {
+.ourStoryInner {
   width: 80%;
   display: flex;
   flex-direction: column;
+  align-items: start;
   gap: 1rem;
+}
+
+.linksOuter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
 }
 
 .text1 {
@@ -432,12 +454,14 @@
 .linksInner h4 {
   color: var(--primary-titleColor-color);
   font-size: var(--primary-h2fontSize);
+  width: 100%;
   font-weight: 500;
   letter-spacing: 0.7px;
 }
 
 .linksInner ul {
   color: var(--primary-textColor-color);
+  width: 100%;
   font-size: var(--primary-h4normalFontSize);
   display: flex;
   flex-direction: column;
@@ -447,4 +471,276 @@
 .linksInner div {
   display: flex;
   gap: 1rem;
+}
+
+#SocialBox2 {
+  display: none;
+}
+
+#featuredBoxInner {
+  flex-direction: column;
+}
+
+#ourStory2 {
+  display: none;
+}
+
+#commentsBoxOuter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#desktopNew {
+  display: none;
+}
+
+@media (min-width: 1920px) {
+  #root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #siteBox {
+    width: 80%;
+  }
+  #firstBox {
+    flex-direction: row;
+  }
+  #innerDiv {
+    order: 2;
+    width: 50%;
+  }
+  #TopDiv {
+    width: 35%;
+  }
+  #SocialBox {
+    display: none;
+  }
+  #SocialBox2 {
+    margin-top: 6rem;
+    width: 10%;
+    rotate: 270deg;
+    display: flex;
+    font-size: var(--primary-smallerFontSize);
+    color: var(--primary-textColorLinks-color);
+    gap: 1rem;
+    padding-bottom: 2.3rem;
+  }
+  #homeImageBox {
+    height: 75vh;
+    width: 73%;
+  }
+  #imageBox {
+    width: 75%;
+    height: 80%;
+  }
+  #ourStory2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  #featuredBoxInner {
+    flex-direction: row;
+    padding: 4rem 6rem;
+  }
+  #featuredCard {
+    height: 52vh;
+    width: 65vw;
+  }
+  #ourStory1 {
+    display: none;
+  }
+  #ourStoryOuterBox {
+    width: 50%;
+    order: 1;
+  }
+  #ourStoryBox {
+    flex-direction: row;
+    width: 100%;
+  }
+  #ourStoryBoxInner {
+    order: 2;
+    width: 45%;
+  }
+  #ourStoryImageBox1 {
+    width: 75%;
+    height: 57vh;
+  }
+  #cardProduct {
+    width: 100%;
+    min-height: 26vh;
+    padding: 0rem 1.3rem;
+  }
+  #productsListBox {
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 0.1rem;
+    gap: 1.6rem;
+    padding: 5%;
+  }
+  #commentsBoxOuter {
+    flex-direction: row;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #ProductsImageOuterBox {
+    margin-top: 3rem;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #ProductsImageImageBox1 {
+    width: 73%;
+    height: 58vh;
+    position: relative;
+  }
+  #commentBox {
+    width: 50%;
+  }
+  #commentInner {
+    width: 85%;
+  }
+  #newCard {
+    display: none;
+  }
+  #desktopNew {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem 6rem;
+    gap: 2rem;
+  }
+  #newCard2 {
+    height: 44vh;
+  }
+  #linksBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #linksBox {
+    width: auto;
+  }
+  .linksOuter {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #navBar {
+    width: 80%;
+  }
+  #desktopNav {
+    display: flex;
+  }
+  #newsletterInner {
+    flex-direction: row;
+  }
+  #newsletterInner h3 {
+    text-align: start;
+    margin: 0.3rem 0.3rem 0.8rem 0.3rem;
+  }
+  #newsletterInner p {
+    text-align: start;
+  }
+  #newsDiv1 {
+    box-sizing: border-box;
+    padding: 2.5rem;
+  }
+  #newsDiv2 {
+    flex-direction: row;
+    justify-content: center;
+  }
+  #newsletterInner input {
+    width: 50%;
+    margin-bottom: 0rem;
+  }
+  #boxWidth {
+    width: 35%;
+    max-height: 65vh;
+    overflow-y: auto;
+  }
+  #imageCartBox {
+    height: 12vh;
+    width: 5vw;
+  }
+  #imageCartBox img {
+    width: 56%;
+    height: 80%;
+  }
+  #amountBox {
+    width: 65%;
+  }
+
+  /* navBar */
+  .phoneButton {
+    display: none;
+  }
+
+  /* all classes */
+  .b5 {
+    width: 30%;
+    padding: 1rem 0rem;
+  }
+  .linksInner {
+    width: 20%;
+  }
+  .linksInner div {
+    align-items: center;
+  }
+  .ourStoryInner {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --primary-smallerFontSize: 0.813rem;
+    --primary-smallFontSize: 0.875rem;
+    --primary-h4normalFontSize: 1rem;
+    --primary-h3fontSize: 1.25rem;
+    --primary-h2fontSize: 1.5rem;
+    --primary-h1fontSize: 2.25rem;
+    --primary-BiggestFontSize: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  :root {
+    --primary-smallerFontSize: 0.813rem;
+    --primary-smallFontSize: 0.875rem;
+    --primary-h4normalFontSize: 1rem;
+    --primary-h3fontSize: 1.25rem;
+    --primary-h2fontSize: 1.5rem;
+    --primary-h1fontSize: 2.25rem;
+    --primary-BiggestFontSize: 2.25rem;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1920px) {
+  :root {
+    --primary-smallerFontSize: 0.813rem;
+    --primary-smallFontSize: 0.875rem;
+    --primary-h4normalFontSize: 1rem;
+    --primary-h3fontSize: 1.25rem;
+    --primary-h2fontSize: 1.5rem;
+    --primary-h1fontSize: 2.25rem;
+    --primary-BiggestFontSize: 2.25rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --primary-smallerFontSize: 1.013rem;
+    --primary-smallFontSize: 1.075rem;
+    --primary-h4normalFontSize: 1.15rem;
+    --primary-h3fontSize: 1.4rem;
+    --primary-h2fontSize: 1.65rem;
+    --primary-h1fontSize: 2.4rem;
+    --primary-BiggestFontSize: 2.4rem;
+  }
 }

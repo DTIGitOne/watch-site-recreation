@@ -24,6 +24,19 @@ const Menu = ({isOpen, featured, products, newWatch, toggle, cart, toggleCart}) 
         }
     };
 
+    const handleClose = () => {
+        if (menuRef.current) {
+            menuRef.current.classList.remove("openAnimation");
+            menuRef.current.classList.add("closeAnimation");
+        }
+        setExtended(false)
+        document.body.style.overflow = "auto";
+        setTimeout(() => {
+            toggle()
+            setVisible(false);
+        }, 300);
+    }
+
     useEffect(() => {
         setExtended(isOpen)
     }, [isOpen]);
@@ -82,7 +95,7 @@ const Menu = ({isOpen, featured, products, newWatch, toggle, cart, toggleCart}) 
                     <Cart />
                 ) : (
                     <div id="menuBox" className={extended ? "fadeIn" : "fadeOut"}>
-                    <button>HOME</button>
+                    <button onClick={handleClose}>HOME</button>
                     <button onClick={() => handleScrollToSection(featured)}>FEATURED</button>
                     <button onClick={() => handleScrollToSection(products)}>PRODUCTS</button>
                     <button onClick={() => handleScrollToSection(newWatch)}>NEW</button>

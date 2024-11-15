@@ -1,11 +1,11 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Carousel from '../Components/Carousel';
 import NavBar from '../Components/NavBar';
 import ScrollToTopButton from '../Components/ScrollToTop';
 import Fade from '../Components/SlickCarousel';
 import WatchCard from '../Components/WatchCard';
 import '../css/home.css'
-import { featuredWatches, mergedArray, newCollection, products } from '../Data/data';
+import { featuredWatches, mergedArray, newCollection, newWatches, products } from '../Data/data';
 import outStory from "../Data/Images/story 1.png"
 import story2 from "../Data/Images/story 2.png";
 import FacebookIcon from '../svg/Facebook';
@@ -48,12 +48,17 @@ const MainPage = () => {
     };
 
     return (
-        <div>
+        <div id='siteBox'>
             <NavBar  featured={featuredRef} products={productsRef} newWatch={newRef}/>
             {newCollection.map((list) => {
                 return (
-                    <div className='flex flex-col justify-center items-center gap-7' key={list.id}>
-                        <div className='flex justify-end'>
+                    <div id='firstBox' className='flex justify-center items-center gap-7' key={list.id}>
+                        <div id='SocialBox2'>
+                            <button>Facebook</button>
+                            <button>Twitter</button>
+                            <button>Instagram</button>
+                          </div>
+                        <div id='innerDiv' className='flex justify-end'>
                           <div id='SocialBox'>
                             <button>Facebook</button>
                             <button>Twitter</button>
@@ -84,7 +89,7 @@ const MainPage = () => {
                    <div className='divLine'></div>
                    <h3 className='text1'>FEATURED</h3>
                 </div>
-                <div className=' flex flex-col justify-center gap-10 items-center mt-10'>
+                <div id='featuredBoxInner' className=' flex justify-center gap-10 items-center mt-10'>
                     {featuredWatches.map((list) => {
                         return (
                             <div id='featuredCard'>
@@ -95,11 +100,16 @@ const MainPage = () => {
                 </div>
             </div>
             <div id='ourStoryBox'>
-                <div className=' flex flex-col w-full justify-center items-center gap-3'>
+                <div id='ourStoryBoxInner'>
+                <div id='ourStory1' className=' flex flex-col w-full justify-center items-center gap-3'>
                    <div className='divLine'></div>
                    <h3 className='text1'>OUR STORY</h3>
                 </div>
-                <div className='outStoryInner'>
+                <div className='ourStoryInner'>
+                    <div id='ourStory2'>
+                       <div className='divLine'></div>
+                       <h3 className='text1'>OUR STORY</h3>
+                    </div>
                     <h2 className='heading1'>
                         Inspirational Watch of 
                         this year
@@ -112,6 +122,7 @@ const MainPage = () => {
                             Discover
                         </button>
                     </div>
+                </div>
                 </div>
                 <div id='ourStoryOuterBox'>
                     <div id='ourStoryImageBox1'>
@@ -138,6 +149,7 @@ const MainPage = () => {
                     })}
                 </div>
                 </div>
+                <div id='commentsBoxOuter'>
                 <div id='commentBox'>
                     <div id='commentInner'>
                         <Carousel />
@@ -151,6 +163,7 @@ const MainPage = () => {
                         <div id='ProductsImageInnerBox2'></div>
                     </div>
                 </div>
+                </div>
             </div>
             <div ref={newRef} id='newArrivalsBox'>
                 <div className=' flex flex-col w-full justify-center items-center gap-3'>
@@ -160,16 +173,30 @@ const MainPage = () => {
                 <div id='newCard'>
                     <Fade />
                 </div>
+                <div id='desktopNew'>
+                {newWatches.map((item) => {
+                    return (
+                        <div id='newCard2'>
+                            <WatchCard image={item.Image} price={item.price} name={item.name} newW={true} id={item.id} />
+                        </div>
+                    );
+                })}
+                </div>
             </div>
             <div id='newsletterBox'>
                 <div id='newsletterInner'>
-                    <h3>Subscribe Our <br/> Newsletter</h3>
-                    <p>Don't miss out on your discounts. Subscribe to our email newsletter to get the best offers, discounts, coupons, gifts and much more.</p>
-                    <input type="text" placeholder='disabeld' disabled={true} />
-                    <button className='b5'>SUBSCRIBE</button>
+                    <div id='newsDiv1' className='flex flex-col w-full'>
+                        <h3>Subscribe Our <br/> Newsletter</h3>
+                        <p>Don't miss out on your discounts. Subscribe to our email newsletter to get the best offers, discounts, coupons, gifts and much more.</p>
+                    </div>
+                    <div id='newsDiv2' className='flex flex-col w-full'>
+                        <input type="text" placeholder='disabeld' disabled={true} />
+                        <button className='b5'>SUBSCRIBE</button>
+                    </div>
                 </div>
             </div>
             <div id='linksBox'>
+                <div className='linksOuter'>
                 <div className='linksInner'>
                     <h4>Our information</h4>
                     <ul>
@@ -203,6 +230,7 @@ const MainPage = () => {
                         <TwitterIcon />
                         <InstagramIcon />
                     </div>
+                </div>
                 </div>
             </div>
             <div id='copyrightBox'>

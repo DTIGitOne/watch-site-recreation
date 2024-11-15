@@ -7,14 +7,7 @@
   --primary-body-color: #fcfcfc;
 }
 
-html {
-  width: 100svw;
-  height: 100svh;
-}
-
 body {
-  width: 100svw;
-  height: 100svh;
   margin: 0;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,6 +19,5 @@ code {
 }
 
 #root {
-  width: 100svw;
   background-color: var(--primary-body-color);
 }

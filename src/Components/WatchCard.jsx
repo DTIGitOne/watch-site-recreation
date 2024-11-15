@@ -25,11 +25,9 @@ const WatchCard = ({ image, name, price, product, newW, sale, id }) => {
         const watch = matchedWatches.find(item => item.id === id);
         if (watch && watch.amount > 2) {
             setButtonColor("#ff7658")
-            console.log("no");
         } else {
             event.stopPropagation();
             setButtonColor("var(--primary-homeImageBox-color)")
-            console.log("ok");
             setIsOpen(true);
             addWatch(id);
 

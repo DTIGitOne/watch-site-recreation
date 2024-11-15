@@ -14,15 +14,21 @@ const NavBar = ({featured, products, newWatch}) => {
 
     useEffect(() => {
         const themeStorage = localStorage.getItem("theme");
-        setTheme(themeStorage ? JSON.parse(themeStorage) : false); // Parse to handle boolean value
+        setTheme(themeStorage ? JSON.parse(themeStorage) : false);
     }, []);
     
     const handleTheme = () => {
         setTheme((prev) => {
             const newTheme = !prev;
-            localStorage.setItem("theme", JSON.stringify(newTheme)); // Store the updated theme
+            localStorage.setItem("theme", JSON.stringify(newTheme));
             return newTheme;
         });
+    };
+
+    const handleScrollToSection = (section) => {        
+        if (section.current) {
+            section.current.scrollIntoView({ behavior: 'smooth' });
+        }
     };
     
     const toggleOpenCartState = () => {
@@ -60,8 +66,15 @@ const NavBar = ({featured, products, newWatch}) => {
 
     return (
         <div className=" h-auto w-full flex absolute top-0 left-0 p-5 justify-center">
-            <div className=" w-1/2 pl-3">
+            <div id="navBar" className="h-auto flex justify-center">
+            <div className=" w-1/2 pl-3 flex">
                 <LogoSVG />
+                <div id="desktopNav">
+                    <button>HOME</button>
+                    <button onClick={() => handleScrollToSection(featured)}>FEATURED</button>
+                    <button onClick={() => handleScrollToSection(products)}>PRODUCTS</button>
+                    <button onClick={() => handleScrollToSection(newWatch)}>NEW</button>
+                </div>
             </div>
             <div className=" w-1/2 flex justify-end pr-2 gap-5">
                 <button onClick={handleTheme}>
@@ -88,16 +101,17 @@ const NavBar = ({featured, products, newWatch}) => {
                     null
                 ) : (
                     open ? (
-                        <button className="z-50" onClick={toggleOpenState}>
+                        <button className="z-50 phoneButton" onClick={toggleOpenState}>
                           <CloseIcon />
                         </button>
                     ) : (
-                        <button className="z-50" onClick={toggleOpenState}>
+                        <button className="z-50 phoneButton" onClick={toggleOpenState}>
                           <MenuIcon />
                         </button>
                     )
                 )}
                 <Menu isOpen={open} featured={featured} products={products} newWatch={newWatch} cart={cartOpen} toggle={toggleOpenState} toggleCart={toggleOpenCartState}/>
+            </div>
             </div>
         </div>
     );

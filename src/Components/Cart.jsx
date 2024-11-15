@@ -55,7 +55,7 @@ const Cart = () => {
                         onDelete={() => deleteItem(item.id)}
                     />
                 ))}
-            </div>
+                </div>
             ) : (
                 <div id="noItems">No items</div>
             )}
