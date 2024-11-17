@@ -1,3 +1,5 @@
+/* card id's */
+
 #cardBox {
   display: flex;
   flex-direction: column;
@@ -6,23 +8,6 @@
   background-color: var(--primary-cardBackground-color);
   box-shadow: var(--primary-boxShadow-color);
   border: var(--primary-borderCard-color);
-}
-
-.cardBoxImage1 {
-  width: 42%;
-  height: 54%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cardBoxImage2 {
-  width: 42%;
-  height: 55%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0.5rem;
 }
 
 #cardBoxImage img {
@@ -90,14 +75,6 @@
   color: var(--primary-titleColor-color);
 }
 
-.pElement {
-  padding: 0.3rem 1rem;
-}
-
-.pElement2 {
-  padding: 0.3rem 0.2rem;
-}
-
 #productDetails div p {
   color: var(--primary-titleColor-color);
   font-size: var(--primary-h4normalFontSize);
@@ -139,6 +116,8 @@
   background-color: var(--primary-cardBackground-color);
 }
 
+/* card class's */
+
 .dateText {
   font-size: var(--primary-h4normalFontSize);
   font-weight: 600;
@@ -170,4 +149,29 @@
   font-weight: 600;
   font-size: var(--primary-h4normalFontSize);
   color: #2e2e2e;
+}
+
+.cardBoxImage1 {
+  width: 42%;
+  height: 54%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardBoxImage2 {
+  width: 42%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.pElement {
+  padding: 0.3rem 1rem;
+}
+
+.pElement2 {
+  padding: 0.3rem 0.2rem;
 }

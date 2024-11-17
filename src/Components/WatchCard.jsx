@@ -1,6 +1,6 @@
 import "../css/card.css";
 import "../css/home.css";
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductButtonIcon from "../svg/ProductButtonIcon";
 import NewIcon from "../svg/NewIcon";
@@ -8,11 +8,13 @@ import SaleIcon from "../svg/SaleIcon";
 import { addWatch } from "./js/functions";
 import { mergedArray } from "../Data/data";
 
+// Card component used for all products on the page | dinnamicly changed to fit in different sections
 const WatchCard = ({ image, name, price, product, newW, sale, id }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [cartColor, setCartColor] = useState("#FFFFFF");
-    const [buttonColor, setButtonColor] = useState("#FFFFFF");
+    const [isOpen, setIsOpen] = useState(false); // card open state
+    const [cartColor, setCartColor] = useState("#FFFFFF"); // product button color
+    const [buttonColor, setButtonColor] = useState("#FFFFFF"); // add to cart button color
 
+    // function for adding items to cart with animation closing added
     const addCart = (event) => {
         const watchesCart = JSON.parse(localStorage.getItem('watches')) || [];
         const matchedWatches = watchesCart
@@ -38,6 +40,7 @@ const WatchCard = ({ image, name, price, product, newW, sale, id }) => {
         }
     }
 
+    // function for adding items to cart for product card type
     const addCart2 = () => {
         const watchesCart = JSON.parse(localStorage.getItem('watches')) || [];
         const matchedWatches = watchesCart
@@ -50,10 +53,8 @@ const WatchCard = ({ image, name, price, product, newW, sale, id }) => {
         const watch = matchedWatches.find(item => item.id === id);
         if (watch && watch.amount > 2) {
             setCartColor("red");
-            console.log("no");
         } else {
             setCartColor("var(--primary-homeImageBox-color)")
-            console.log("ok");
             setIsOpen(true);
             addWatch(id);
 
@@ -78,6 +79,7 @@ const WatchCard = ({ image, name, price, product, newW, sale, id }) => {
                 backgroundColor: isOpen ? newW ? "var(--primary-homeImageBox-color)" : "" : "",
             }}
         >
+            {/* if the 'product' property is passed add the icon for product, if not add nothing to the card */}
             {product ? (
                 <div id="productIcon">
                     <ProductButtonIcon added={cartColor}/>
@@ -85,6 +87,7 @@ const WatchCard = ({ image, name, price, product, newW, sale, id }) => {
             ) : (
                 null
             )}
+            {/* if the 'sale' property is passed add the icon for sale, if not add nothing to the card */}
             {sale ? (
                 <div id="SaleIconBox">
                     <SaleIcon />
@@ -92,6 +95,7 @@ const WatchCard = ({ image, name, price, product, newW, sale, id }) => {
             ) : (
                 null
             )}
+            {/* if the 'new' property is passed add the icon for new, if not add nothing to the card */}
             {newW ? (
                 <div id="newWatch">
                     <NewIcon open={isOpen}/>
@@ -104,10 +108,12 @@ const WatchCard = ({ image, name, price, product, newW, sale, id }) => {
             </div>
             <h4 className={isOpen && newW ? "text3" : product ? "product1" : "text2"}>{name.toUpperCase()}</h4>
             <div className={isOpen && newW ? "priceCard3" : product ? "priceCard2" : "priceCard1"}>${price}</div>
+            {/* if the card is passed 'product' dont add the option for button toggling instead add items on card click without button confirmation (only used at the product section) */}
             {product ? (
                 null
             ) : (
                 <AnimatePresence>
+                {/* animating the presence of the button when the card is toggled */}
                 {isOpen && (
                     <motion.div
                         initial={{ height: 0, opacity: 0 }}

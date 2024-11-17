@@ -7,16 +7,19 @@ import Menu from "./DropdownMenu";
 import MenuIcon from "../svg/MenuIcon";
 import CloseIcon from "../svg/CloseIcon";
 
+// Navigation Bar component
 const NavBar = ({featured, products, newWatch}) => {
-    const [theme, setTheme] = useState(null);
-    const [open, setOpen] = useState(false);
-    const [cartOpen, setCartOpen] = useState(false);
+    const [theme, setTheme] = useState(null); // site theme state
+    const [open, setOpen] = useState(false); // is navigation bar for mobile open
+    const [cartOpen, setCartOpen] = useState(false); // is the cart open 
 
+    // set the theme that is located in the local storage
     useEffect(() => {
         const themeStorage = localStorage.getItem("theme");
         setTheme(themeStorage ? JSON.parse(themeStorage) : false);
     }, []);
     
+    // changing/setting the site theme
     const handleTheme = () => {
         setTheme((prev) => {
             const newTheme = !prev;
@@ -25,21 +28,27 @@ const NavBar = ({featured, products, newWatch}) => {
         });
     };
 
+    // function to scroll to selected element
     const handleScrollToSection = (section) => {        
         if (section.current) {
             section.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
     
+    // cart toggle function
     const toggleOpenCartState = () => {
         setCartOpen((prev) => !prev);
     };
     
+    // menu mobile toggle function
     const toggleOpenState = () => {
         setOpen((prev) => !prev);
     };
+
+    // useEffect hook to check changes of theme
     useEffect(() => {
         if (theme) {
+            // Dark Theme
             document.documentElement.style.setProperty("--primary-body-color", "#1F1F1F");
             document.documentElement.style.setProperty("--primary-homeImageBox-color", "#EFBE8A");
             document.documentElement.style.setProperty("--primary-titleColor-color", "#F2F2F2");
@@ -51,6 +60,7 @@ const NavBar = ({featured, products, newWatch}) => {
             document.documentElement.style.setProperty("--primary-action-color", "#3D3D3D");
             document.documentElement.style.setProperty("--primary-boxShadow-color", "10px 6px 10px 1px #242424");
         } else {
+            // Light theme
             document.documentElement.style.setProperty("--primary-body-color", "#FCFCFC");
             document.documentElement.style.setProperty("--primary-homeImageBox-color", "#FFB568");
             document.documentElement.style.setProperty("--primary-titleColor-color", "#2E2E2E");
@@ -77,6 +87,7 @@ const NavBar = ({featured, products, newWatch}) => {
                 </div>
             </div>
             <div className=" w-1/2 flex justify-end pr-2 gap-5">
+                {/* theme button toggler */}
                 <button onClick={handleTheme}>
                    {theme ? (
                     <ThemeButton2 />
@@ -84,6 +95,7 @@ const NavBar = ({featured, products, newWatch}) => {
                     <ThemeButton1 />
                    )}
                 </button>
+                {/* button toggler condition for displaying the icon for when the cart is open or closed */}
                 {open ? (
                     null
                 ) : (
@@ -97,6 +109,7 @@ const NavBar = ({featured, products, newWatch}) => {
                         </button>
                     )
                 )}
+                {/* same logic as the cart but only for the mobile navigation menu */}
                 {cartOpen ? (
                     null
                 ) : (
@@ -110,6 +123,7 @@ const NavBar = ({featured, products, newWatch}) => {
                         </button>
                     )
                 )}
+                {/* the menu that is being conditionly open either for the navigating menu for mobile or for the cart menu*/}
                 <Menu isOpen={open} featured={featured} products={products} newWatch={newWatch} cart={cartOpen} toggle={toggleOpenState} toggleCart={toggleOpenCartState}/>
             </div>
             </div>

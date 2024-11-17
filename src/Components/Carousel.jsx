@@ -4,6 +4,7 @@ import RightArrow from '../svg/RightArrow';
 import { reviews } from '../Data/data';
 import ReviewCard from './ReviewCard';
 
+//Standard carousel component for the user comments
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 

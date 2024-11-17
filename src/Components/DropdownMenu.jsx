@@ -2,11 +2,13 @@ import "../css/menu.css";
 import { useEffect, useRef, useState } from "react";
 import Cart from "./Cart";
 
+// Component menu for mobile and Cart menu | conditinal rendring component used for both
 const Menu = ({isOpen, featured, products, newWatch, toggle, cart, toggleCart}) => {
-    const [extended, setExtended] = useState(false);
-    const [visible, setVisible] = useState(false);
+    const [extended, setExtended] = useState(false); // is the Menu open
+    const [visible, setVisible] = useState(false); // state for visiblitie used for animation toggling
     const menuRef = useRef(null);
 
+    // scrolling to section and toggling animation for menu
     const handleScrollToSection = (section) => {
         if (menuRef.current) {
             menuRef.current.classList.remove("openAnimation");
@@ -24,6 +26,7 @@ const Menu = ({isOpen, featured, products, newWatch, toggle, cart, toggleCart}) 
         }
     };
 
+    // closing the menu with the toggling of the closing animation
     const handleClose = () => {
         if (menuRef.current) {
             menuRef.current.classList.remove("openAnimation");
@@ -37,10 +40,12 @@ const Menu = ({isOpen, featured, products, newWatch, toggle, cart, toggleCart}) 
         }, 300);
     }
 
+    // useEffect hook for detecting the expanded state
     useEffect(() => {
         setExtended(isOpen)
     }, [isOpen]);
 
+    // check when the menu is open to make sure the user screen is at the top of the screen and toggle the open animation
     useEffect(() => {
         if (isOpen) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -60,10 +65,12 @@ const Menu = ({isOpen, featured, products, newWatch, toggle, cart, toggleCart}) 
         }
     }, [isOpen]);
 
+    // same logic but for the cart logic
     useEffect(() => {
         setExtended(cart)
     }, [cart]);
 
+    // also making sure the screen is at the top when the cart is toggled
     useEffect(() => {
         if (cart) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -87,10 +94,11 @@ const Menu = ({isOpen, featured, products, newWatch, toggle, cart, toggleCart}) 
     return (
         visible ? (
             <div 
-                ref={menuRef} 
+                ref={menuRef}
                 id="menuBox" 
                 className={extended ? "openAnimation" : "closeAnimation"}
             >
+                { /* if the cart propertiy is provided then return the Cart component else if the standard menu is toggled return the mobile menu*/ }
                 {cart ? (
                     <Cart />
                 ) : (

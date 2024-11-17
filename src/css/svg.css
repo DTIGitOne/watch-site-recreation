@@ -1,73 +1,79 @@
 #logoIcon path {
-    fill: var(--primary-titleColor-color);
+  fill: var(--primary-titleColor-color);
 }
 
 #cartIcon {
-    fill: var(--primary-action-color);
+  fill: var(--primary-action-color);
 }
 
 #SaleIcon rect {
-    fill: var(--primary-homeImageBox-color);
+  fill: var(--primary-homeImageBox-color);
 }
 
 #closeIcon path {
-    fill: var(--primary-titleColor-color);
+  fill: var(--primary-titleColor-color);
 }
 
 #leftArrow g rect {
-    fill: var(--primary-cardBackground-color);
+  fill: var(--primary-cardBackground-color);
 }
 
 #leftArrow path {
-    fill: var(--primary-homeImageBox-color);
+  fill: var(--primary-homeImageBox-color);
 }
 
 #rightArrow g rect {
-    fill: var(--primary-cardBackground-color);
+  fill: var(--primary-cardBackground-color);
 }
 
 #rightArrow path {
-    fill: var(--primary-homeImageBox-color);
+  fill: var(--primary-homeImageBox-color);
 }
 
 #commentNotes g rect {
-    fill: var(--primary-cardBackground-color);
+  fill: var(--primary-cardBackground-color);
 }
 
 #commentNotes path {
-    fill: var(--primary-homeImageBox-color);
+  fill: var(--primary-homeImageBox-color);
 }
 
 .icons path {
-    fill: var(--primary-textColor-color);
+  fill: var(--primary-textColor-color);
 }
 
 #upArrow g rect {
-    fill: var(--primary-body-color);
+  fill: var(--primary-body-color);
 }
 
 #upArrow path {
-    fill: var(--primary-homeImageBox-color);
+  fill: var(--primary-homeImageBox-color);
 }
 
 #TrashIcon path {
-    fill: var(--primary-homeImageBox-color);
+  fill: var(--primary-homeImageBox-color);
 }
 
 #MinusIcon rect {
-    fill: var(--primary-cardBackground-color);
-    stroke: var(--primary-borderCard-color);
+  fill: var(--primary-cardBackground-color);
+  stroke: var(--primary-borderCard-color);
 }
 
 #PlusIcon rect {
-    fill: var(--primary-cardBackground-color);
-    stroke: var(--primary-borderCard-color);
+  fill: var(--primary-cardBackground-color);
+  stroke: var(--primary-borderCard-color);
 }
 
 #MinusIcon path {
-    fill: var(--primary-titleColor-color);
+  fill: var(--primary-titleColor-color);
 }
 
 #PlusIcon path {
-    fill: var(--primary-titleColor-color);
+  fill: var(--primary-titleColor-color);
+}
+
+#RotateDevice {
+  width: 50%;
+  height: 50%;
+  fill: var(--primary-homeImageBox-color);
 }

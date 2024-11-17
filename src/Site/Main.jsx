@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import '../css/home.css'
+import { useRef, useState } from 'react';
 import Carousel from '../Components/Carousel';
 import NavBar from '../Components/NavBar';
 import ScrollToTopButton from '../Components/ScrollToTop';
 import Fade from '../Components/SlickCarousel';
 import WatchCard from '../Components/WatchCard';
-import '../css/home.css'
 import { featuredWatches, mergedArray, newCollection, newWatches, products } from '../Data/data';
 import outStory from "../Data/Images/story 1.png"
 import story2 from "../Data/Images/story 2.png";
@@ -12,14 +12,18 @@ import FacebookIcon from '../svg/Facebook';
 import InstagramIcon from '../svg/InstagramIcon';
 import TwitterIcon from '../svg/Twitter';
 import { addWatch } from '../Components/js/functions';
+import RotateDevice from '../svg/RotateDevice';
 
+// The main website that is being displayed
 const MainPage = () => {
     const [buttonColor, setButtonColor] = useState("#FFFFFF");
 
+    // references used for the scrolling to functions
     const featuredRef = useRef(null);
     const productsRef = useRef(null);
     const newRef = useRef(null);
 
+    // add to Cart function that is being used only for the first product on the new collection section
     const addCart = (id, event) => {
         const watchesCart = JSON.parse(localStorage.getItem('watches')) || [];
         const matchedWatches = watchesCart
@@ -48,8 +52,12 @@ const MainPage = () => {
     };
 
     return (
-        <div id='siteBox'>
-            <NavBar  featured={featuredRef} products={productsRef} newWatch={newRef}/>
+        <>
+            <div id='siteBox'>
+            {/* navigation bar located at the top of the screen */}
+            <NavBar featured={featuredRef} products={productsRef} newWatch={newRef}/>
+            
+            {/* the first selection (new colletion) being mapped out from the fake data */}
             {newCollection.map((list) => {
                 return (
                     <div id='firstBox' className='flex justify-center items-center gap-7' key={list.id}>
@@ -84,6 +92,8 @@ const MainPage = () => {
                     </div>
                 );
             })}
+
+            {/* second section (featured products) also being mapped out from the fake data */}
             <div ref={featuredRef} id='featuredBox'>
                 <div className=' flex flex-col w-full justify-center items-center gap-3'>
                    <div className='divLine'></div>
@@ -99,6 +109,8 @@ const MainPage = () => {
                     })}
                 </div>
             </div>
+
+            {/* third section (Our Story) hardcoded fake details */}
             <div id='ourStoryBox'>
                 <div id='ourStoryBoxInner'>
                 <div id='ourStory1' className=' flex flex-col w-full justify-center items-center gap-3'>
@@ -133,6 +145,8 @@ const MainPage = () => {
                     </div>
                 </div>
             </div>
+
+            {/* fourth section (Products) that are being mapped out from the fake data array */}
             <div ref={productsRef} id='productsBox'>
                 <div className=' flex flex-col w-full justify-center items-center gap-3'>
                    <div className='divLine'></div>
@@ -149,6 +163,8 @@ const MainPage = () => {
                     })}
                 </div>
                 </div>
+
+                {/* fifth section (Comments) that are nested inside of the products section elements */}
                 <div id='commentsBoxOuter'>
                 <div id='commentBox'>
                     <div id='commentInner'>
@@ -164,15 +180,22 @@ const MainPage = () => {
                     </div>
                 </div>
                 </div>
+                {/* fifth */}
+
             </div>
+            {/* fourth */}
+
+            {/* sixth section (New Arrivals) which has mapped out fake data */}
             <div ref={newRef} id='newArrivalsBox'>
                 <div className=' flex flex-col w-full justify-center items-center gap-3'>
                    <div className='divLine'></div>
                    <h3 className='text1'>NEW ARRIVALS</h3>
                 </div>
+                {/* if the user is on mobile view display the elemnts as a carusel component (controlled by hiding the element in css on smaller screens */}
                 <div id='newCard'>
                     <Fade />
                 </div>
+                {/* if the user is on desktop view display the elemnts as mapped out card all at once (controlled by hiding the element in css on smaller screens  */}
                 <div id='desktopNew'>
                 {newWatches.map((item) => {
                     return (
@@ -183,6 +206,8 @@ const MainPage = () => {
                 })}
                 </div>
             </div>
+
+            {/* seventh section (News Letter) that has a fake news letter sign up forum inside*/}
             <div id='newsletterBox'>
                 <div id='newsletterInner'>
                     <div id='newsDiv1' className='flex flex-col w-full'>
@@ -195,6 +220,8 @@ const MainPage = () => {
                     </div>
                 </div>
             </div>
+        
+            {/* eigth section (siteLinks and detils) which is fake data which has been hardcoded */}
             <div id='linksBox'>
                 <div className='linksOuter'>
                 <div className='linksInner'>
@@ -239,6 +266,10 @@ const MainPage = () => {
             </div>
             <ScrollToTopButton />
         </div>
+        <div id='phoneRotateDiv'>
+            <RotateDevice />
+        </div>
+        </>
     )
 }
 

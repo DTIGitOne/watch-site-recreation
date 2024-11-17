@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import UpArrow from '../svg/UpArrow.jsx';
 
+
+// scroll to top component
 const ScrollToTopButton = () => {
   const [showButton, setShowButton] = useState(false);
 

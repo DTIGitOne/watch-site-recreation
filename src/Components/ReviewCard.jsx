@@ -1,6 +1,7 @@
-import CommentNoteIcon from "../svg/CommentNoteIcon";
 import "../css/card.css";
+import CommentNoteIcon from "../svg/CommentNoteIcon";
 
+// component for user comments
 const ReviewCard = ({text, date, image, name, title}) => {
     return (
         <div id="reviewCardBox">

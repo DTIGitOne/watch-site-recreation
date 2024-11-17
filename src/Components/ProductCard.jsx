@@ -3,10 +3,12 @@ import MinusIcon from "../svg/MinusIcon";
 import PlusIcon from "../svg/PlusIcon";
 import TrashIcon from "../svg/TrashIcon";
 
+//card component for displying products in cart
 const ProductCard = ({ image, name, price, id, amount: initialAmount, onIncrement, onDecrement, onDelete }) => {
-    const [amount, setAmount] = useState(initialAmount);
-    const [removed, setRemoved] = useState(false);
+    const [amount, setAmount] = useState(initialAmount); // current cart items state
+    const [removed, setRemoved] = useState(false); // is item removed
 
+    // updating the cart items live changes
     const updateCartAmount = (newAmount) => {
         const watchesCart = JSON.parse(localStorage.getItem('watches')) || [];
         const updatedCart = watchesCart.map(watch =>
@@ -15,6 +17,7 @@ const ProductCard = ({ image, name, price, id, amount: initialAmount, onIncremen
         localStorage.setItem('watches', JSON.stringify(updatedCart));
     };
 
+    // add amount of current item
     const incrementAmount = () => {
         if (amount <= 2) {
             onIncrement();
@@ -24,6 +27,7 @@ const ProductCard = ({ image, name, price, id, amount: initialAmount, onIncremen
         } 
     };
 
+    // decrease amount of current item
     const decrementAmount = () => {
         if (amount > 1) {
             onDecrement();
@@ -33,6 +37,7 @@ const ProductCard = ({ image, name, price, id, amount: initialAmount, onIncremen
         }
     };
 
+    // delete the current item from cart
     const removeItem = () => {
         onDelete()
         const watchesCart = JSON.parse(localStorage.getItem('watches')) || [];

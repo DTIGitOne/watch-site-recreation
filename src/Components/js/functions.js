@@ -1,3 +1,4 @@
+// function for adding products into the localstorage
 export function addWatch(id) {
 
     const watch = {

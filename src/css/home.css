@@ -330,6 +330,10 @@
   font-weight: 500;
 }
 
+#phoneRotateDiv {
+  display: none;
+}
+
 /* classe's */
 
 .ourStoryInner {
@@ -496,7 +500,9 @@
   display: none;
 }
 
-@media (min-width: 1920px) {
+/* large screen and larger default */
+@media (min-width: 1024px) {
+  /* site id's */
   #root {
     display: flex;
     justify-content: center;
@@ -627,16 +633,6 @@
   #linksBox {
     width: auto;
   }
-  .linksOuter {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  #navBar {
-    width: 80%;
-  }
-  #desktopNav {
-    display: flex;
-  }
   #newsletterInner {
     flex-direction: row;
   }
@@ -659,21 +655,31 @@
     width: 50%;
     margin-bottom: 0rem;
   }
+
+  /* cart id's */
   #boxWidth {
-    width: 35%;
-    max-height: 65vh;
+    width: 35% !important;
+    max-height: 65vh !important;
     overflow-y: auto;
   }
   #imageCartBox {
-    height: 12vh;
-    width: 5vw;
+    height: 10vh !important;
+    width: 5vw !important;
   }
   #imageCartBox img {
-    width: 56%;
-    height: 80%;
+    width: 56% !important;
+    height: 80% !important;
   }
   #amountBox {
-    width: 65%;
+    width: 65% !important;
+  }
+
+  /* navBar id's */
+  #navBar {
+    width: 80% !important;
+  }
+  #desktopNav {
+    display: flex !important;
   }
 
   /* navBar */
@@ -681,7 +687,7 @@
     display: none;
   }
 
-  /* all classes */
+  /* site class's */
   .b5 {
     width: 30%;
     padding: 1rem 0rem;
@@ -695,8 +701,213 @@
   .ourStoryInner {
     width: 80%;
   }
+  .linksOuter {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 
+/* for medium screens */
+@media (min-width: 1440px) and (max-width: 1920px) {
+  /* id's */
+  #siteBox {
+    width: 85%;
+  }
+  #homeImageBox {
+    height: 60vh;
+    width: 77%;
+  }
+  #imageBox {
+    width: 70%;
+    height: 74%;
+  }
+  #ourStoryImageBox1 {
+    width: 90%;
+    height: 55vh;
+  }
+  #ProductsImageImageBox1 {
+    width: 90%;
+    height: 53vh;
+    position: relative;
+    margin-left: 4rem;
+  }
+
+  /* cart id's */
+  #boxWidth {
+    width: 40% !important;
+  }
+  #imageCartBox {
+    height: 10vh !important;
+    width: 6vw !important;
+  }
+  #imageCartBox img {
+    width: 48% !important;
+    height: 72% !important;
+  }
+  #amountBox {
+    width: 70% !important;
+  }
+
+  /* navBar id's */
+  #navBar {
+    width: 85% !important;
+  }
+}
+
+/* for smaller screens */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  /* id's */
+  #siteBox {
+    width: 81%;
+  }
+  #homeImageBox {
+    height: 60vh;
+    width: 85%;
+  }
+  #imageBox {
+    width: 80%;
+    height: 70%;
+  }
+  #ourStoryImageBox1 {
+    width: 100%;
+    height: 40vh;
+  }
+  #ProductsImageImageBox1 {
+    width: 85%;
+    height: 40vh;
+    position: relative;
+    margin-left: 2rem;
+  }
+  #commentsBoxOuter {
+    width: 100%;
+  }
+
+  /* cart id's */
+  #boxWidth {
+    width: 40% !important;
+  }
+  #imageCartBox {
+    height: 10vh !important;
+    width: 10vw !important;
+  }
+  #imageCartBox img {
+    width: 40% !important;
+    height: 72% !important;
+  }
+  #amountBox {
+    width: 70% !important;
+  }
+  #featuredCard {
+    height: 35vh;
+    width: 50vw;
+  }
+  #cardProduct {
+    min-height: 22vh;
+    padding: 0rem 0.6rem;
+  }
+  #productsListBox {
+    width: 90%;
+  }
+  #desktopNew {
+    padding: 3rem 1rem;
+    gap: 1.5rem;
+  }
+
+  /* class's */
+  .text2 {
+    text-align: center;
+  }
+
+  /* navBar id's */
+  #navBar {
+    width: 81% !important;
+  }
+  #desktopNav {
+    display: none !important;
+  }
+
+  /* navBar */
+  .phoneButton {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* id's */
+  #firstBox {
+    flex-direction: row;
+  }
+  #innerDiv {
+    order: 2;
+    width: 100%;
+  }
+  #TopDiv {
+    width: 35%;
+  }
+  #SocialBox {
+    display: none;
+  }
+  #SocialBox2 {
+    margin-top: 6rem;
+    width: 10%;
+    rotate: 270deg;
+    display: flex;
+    font-size: var(--primary-smallerFontSize);
+    color: var(--primary-textColorLinks-color);
+    gap: 1rem;
+    padding-bottom: 0rem;
+  }
+  #homeImageBox {
+    height: 75vh;
+    width: 100%;
+  }
+  #imageBox {
+    width: 75%;
+    height: 70%;
+  }
+  #ourStoryImageBox1 {
+    width: 60%;
+    height: 40vh;
+  }
+  #ProductsImageImageBox1 {
+    width: 60%;
+    height: 40vh;
+    position: relative;
+    margin-left: 2rem;
+  }
+
+  /* cart id's */
+
+  #imageCartBox {
+    height: 12vh !important;
+    width: 20vw !important;
+  }
+  #imageCartBox img {
+    width: 35% !important;
+    height: 80% !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1000px) {
+  #siteBox {
+    display: none;
+  }
+  #phoneRotateDiv {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-cardBackground-color);
+    color: var(--primary-titleColor-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* media querys for css variables */
 @media (min-width: 768px) and (max-width: 1024px) {
   :root {
     --primary-smallerFontSize: 0.813rem;
