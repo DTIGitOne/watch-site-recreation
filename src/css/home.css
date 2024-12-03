@@ -535,8 +535,8 @@
     padding-bottom: 2.3rem;
   }
   #homeImageBox {
-    height: 75vh;
-    width: 73%;
+    height: 75vh !important;
+    width: 73% !important;
   }
   #imageBox {
     width: 75%;
@@ -571,8 +571,8 @@
     width: 45%;
   }
   #ourStoryImageBox1 {
-    width: 75%;
-    height: 57vh;
+    width: 75% !important;
+    height: 57vh !important;
   }
   #cardProduct {
     width: 100%;
@@ -602,8 +602,8 @@
     align-items: center;
   }
   #ProductsImageImageBox1 {
-    width: 73%;
-    height: 58vh;
+    width: 73% !important;
+    height: 58vh !important;
     position: relative;
   }
   #commentBox {
